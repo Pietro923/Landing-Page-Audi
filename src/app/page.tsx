@@ -1,97 +1,104 @@
-import Hero from '@/components/Hero';
+import Hero from '@/components/Home/Hero';
+import ModelFilter from '@/components/Home/ModelFilter';
 import Link from 'next/link';
+import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
+
+const tiles = [
+  {
+    title: 'Audi Lounge',
+    href: '/es/AudiLounge/',
+    image: '/Home/Conce.avif',
+  },
+  {
+    title: 'Fórmula 1 ®',
+    href: '/es/innovacion-audi/audi-sport/formula-1/',
+    image: '/Home/F1-Home.avif',
+  },
+  {
+    title: 'E-movilidad',
+    href: '/es/innovacion-audi/e-movilidad/',
+    image: '/Home/Etron.avif',
+  },
+ {
+    title: 'Vehículos en stock',
+    href: '/es/buscador-de-stock-nuevo/',
+    image: '/Home/Q8-home.avif',
+  },
+  {
+    title: 'Postventa',
+    href: '/es/servicios-accesorios/',
+    image: '/Home/PostVenta-home.avif',
+  },
+  {
+    title: 'Red de concesionarios',
+    href: '/es/concesionarios/red-de-concesionarios/',
+    image: '/Home/entrega-llave-Home.avif',
+  },
+];
 
 export default function HomePage() {
   return (
     <main className="bg-white">
       {/* Hero Section */}
       <Hero />
-
-      {/* Sección de modelos destacados */}
-      <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-screen-xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-4">Modelos destacados</h2>
-          <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto">
-            Desde SUVs versátiles hasta deportivos de alto rendimiento y modelos 100% eléctricos.
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {/* Modelo 1 */}
-            <div className="group bg-white overflow-hidden shadow-md hover:shadow-2xl transition">
-              <div className="h-80 bg-gray-200 border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 text-2xl">
-                Audi Q5 Sportback
-              </div>
-              <div className="p-8 text-center">
-                <h3 className="text-2xl font-bold mb-3">Audi Q5 Sportback</h3>
-                <p className="text-gray-600 mb-6">Diseño coupé con toda la versatilidad de un SUV premium.</p>
-                <Link href="/es/modelos/q5-sportback" className="text-black font-semibold hover:underline">
-                  Descubrir más →
-                </Link>
-              </div>
-            </div>
-            {/* Modelo 2 */}
-            <div className="group bg-white overflow-hidden shadow-md hover:shadow-2xl transition">
-              <div className="h-80 bg-gray-200 border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 text-2xl">
-                Audi e-tron GT
-              </div>
-              <div className="p-8 text-center">
-                <h3 className="text-2xl font-bold mb-3">Audi e-tron GT</h3>
-                <p className="text-gray-600 mb-6">El Gran Turismo del futuro. 100% eléctrico.</p>
-                <Link href="/es/modelos/e-tron-gt" className="text-black font-semibold hover:underline">
-                  Descubrir más →
-                </Link>
-              </div>
-            </div>
-            {/* Modelo 3 */}
-            <div className="group bg-white overflow-hidden shadow-md hover:shadow-2xl transition">
-              <div className="h-80 bg-gray-200 border-2 border-dashed border-gray-300 flex items-center justify-center text-gray-500 text-2xl">
-                Audi RS 3
-              </div>
-              <div className="p-8 text-center">
-                <h3 className="text-2xl font-bold mb-3">Audi RS 3</h3>
-                <p className="text-gray-600 mb-6">El compacto deportivo más potente del mundo.</p>
-                <Link href="/es/modelos/rs-3" className="text-black font-semibold hover:underline">
-                  Descubrir más →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ModelFilter />
 
       {/* Sección Innovación / e-movilidad */}
       <section className="py-20 px-6 bg-black text-white">
         <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">El futuro es eléctrico</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Audi A5</h2>
+            <h3 className="text-2xl md:text-3xl font-bold mb-6">Emociones intensas</h3>
             <p className="text-xl text-gray-300 mb-8">
-              Con la familia e-tron, Audi lidera la movilidad sostenible sin comprometer performance ni diseño.
+              Cuando lo que sientes no se puede explicar con palabras es que estás al volante del nuevo Audi A5. Potente, deportivo y con la tecnología más avanzada, siente la emoción de conducir sin límites.
             </p>
             <Link
               href="/es/modelos/?byvehicletype=BEV"
               className="bg-white text-black px-8 py-4 text-lg font-medium hover:bg-gray-200 transition rounded inline-block uppercase tracking-wider"
             >
-              Descubrir modelos eléctricos
+              Sedan
             </Link>
           </div>
-          <div className="bg-gray-800 h-96 border-2 border-dashed border-gray-700 flex items-center justify-center text-3xl text-gray-500">
-            Imagen e-tron
+          <div className="relative w-full h-96 md:h-full min-h-96 overflow-hidden rounded-lg">
+            <Image
+              src="/Hero/A5.avif"
+              alt="Audi A5"
+              fill
+              className="object-cover object-center"
+              priority
+            />
           </div>
         </div>
       </section>
 
-      {/* Llamada a acción final */}
-      <section className="py-20 px-6 text-center bg-gray-100">
-        <div className="max-w-screen-xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">Viví la experiencia Audi</h2>
-          <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
-            Encontrá tu concesionario oficial y agendá un test drive para sentir el progreso en movimiento.
-          </p>
-          <Link
-            href="/es/concesionarios/red-de-concesionarios"
-            className="bg-black text-white px-10 py-5 text-lg font-medium hover:bg-gray-800 transition rounded uppercase tracking-wider inline-block"
-          >
-            Encontrar concesionario
-          </Link>
+      {/* Grid 3 columnas x 2 filas */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-screen-2xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {tiles.map((tile) => (
+              <Link
+                key={tile.title}
+                href={tile.href}
+                className="group relative overflow-hidden rounded-lg aspect-square bg-gray-900"
+              >
+                <Image
+                  src={tile.image}
+                  alt={tile.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                  <h3 className="text-2xl font-bold mb-3">{tile.title}</h3>
+                  <span className="inline-flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all">
+                    Ver más
+                    <ArrowRight size={16} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
     </main>

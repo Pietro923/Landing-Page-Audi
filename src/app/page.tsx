@@ -39,14 +39,14 @@ const tiles = [
 
 export default function HomePage() {
   return (
-    <main className="bg-white">
+    <main className="">
       {/* Hero Section */}
       <Hero />
       <ModelFilter />
 
       {/* Sección Innovación / e-movilidad */}
-      <section className="py-20 px-6 bg-black text-white">
-        <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <section className="py-20 px-6 text-white">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Audi A5</h2>
             <h3 className="text-2xl md:text-3xl font-bold mb-6">Emociones intensas</h3>
@@ -73,7 +73,7 @@ export default function HomePage() {
       </section>
 
       {/* Grid 3 columnas x 2 filas */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6">
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {tiles.map((tile) => (
@@ -88,7 +88,7 @@ export default function HomePage() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-2xl font-bold mb-3">{tile.title}</h3>
                   <span className="inline-flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all">
@@ -98,6 +98,39 @@ export default function HomePage() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Video Audi A3 */}
+      <section className="relative w-full h-screen">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/Videos/A3.mp4" type="video/mp4" />
+        </video>
+        
+        <div className="absolute inset-0 bg-black/30" />
+        
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-6">
+          <h2 className="text-5xl md:text-7xl font-bold mb-8">Audi A3</h2>
+          <div className="flex gap-4">
+            <Link
+              href="/es/modelos/a3/sedan"
+              className="bg-white text-black px-8 py-4 text-lg font-medium hover:bg-gray-200 transition rounded uppercase tracking-wider"
+            >
+              Sedán
+            </Link>
+            <Link
+              href="/es/modelos/a3/sportback"
+              className="border-2 border-white text-white px-8 py-4 text-lg font-medium hover:bg-white hover:text-black transition rounded uppercase tracking-wider"
+            >
+              Sportback
+            </Link>
           </div>
         </div>
       </section>

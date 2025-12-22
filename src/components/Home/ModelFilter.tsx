@@ -21,7 +21,7 @@ export default function ModelFilter() {
   const [activeFilters, setActiveFilters] = useState<string[]>([]);
 
   return (
-    <section className="py-16 px-6 max-w-screen-2xl mx-auto">
+    <section className="py-16 px-6 max-w-screen-2xl mx-auto text-white">
       {/* Filtros móvil */}
       <div className="lg:hidden mb-6">
         <select className="w-full border border-gray-300 rounded-md p-3">
@@ -40,7 +40,7 @@ export default function ModelFilter() {
             className={`px-4 py-2 border rounded-full transition ${
               activeFilters.includes(filter)
                 ? 'bg-black text-white'
-                : 'hover:bg-gray-100'
+                : 'hover:bg-gray-800'
             }`}
             onClick={() => {
               setActiveFilters((prev) =>
@@ -59,10 +59,10 @@ export default function ModelFilter() {
       <div className="flex justify-between items-center mb-6">
         <p className="text-lg font-semibold">20 Modelos</p>
         <div className="flex gap-2">
-          <button className="p-2 border rounded hover:bg-gray-100">
+          <button className="p-2 border rounded hover:bg-gray-800">
             <ChevronLeft />
           </button>
-          <button className="p-2 border rounded hover:bg-gray-100">
+          <button className="p-2 border rounded hover:bg-gray-800">
             <ChevronRight />
           </button>
         </div>
@@ -86,7 +86,7 @@ export default function ModelFilter() {
               />
             </div>
             <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-600">
+              <span className="text-sm text-gray-300">
                 {model.count} Modelo{model.count > 1 ? 's' : ''}
               </span>
               <ChevronDown className="group-hover:translate-y-1 transition" />
@@ -99,13 +99,13 @@ export default function ModelFilter() {
       <div className="flex gap-4 justify-center">
         <a
           href="/es/modelos"
-          className="px-6 py-3 border rounded-full hover:bg-gray-100 transition"
+          className="px-6 py-3 border rounded-full hover:bg-gray-700 transition"
         >
           Explorar modelos
         </a>
         <a
           href="/es/modelos/comparar-modelos"
-          className="px-6 py-3 border rounded-full hover:bg-gray-100 transition"
+          className="px-6 py-3 border rounded-full hover:bg-gray-700 transition"
         >
           Comparar modelos
         </a>

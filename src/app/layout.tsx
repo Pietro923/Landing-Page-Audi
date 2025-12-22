@@ -15,8 +15,47 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Audi Argentina",
-  description: "Sitio oficial Audi Argentina",
+  title: "UB Motors - Distribuidor de Audi | Sitio Oficial",
+  description: "Descubrí la gama completa de vehículos Audi en Argentina. Modelos sedan, sportback, SUV y e-tron. Tecnología, diseño y rendimiento premium.",
+  keywords: "Audi, Audi Argentina, autos premium, SUV, sedan, sportback, e-tron, quattro, vehículos eléctricos",
+  authors: [{ name: "Audi Argentina" }],
+  openGraph: {
+    title: "Audi Argentina | Sitio Oficial",
+    description: "Descubrí la gama completa de vehículos Audi en Argentina. Tecnología, diseño y rendimiento premium.",
+    url: "https://www.audi.com.ar",
+    siteName: "Audi Argentina",
+    images: [
+      {
+        url: "/og-image.jpg", // Agregá esta imagen en /public
+        width: 1200,
+        height: 630,
+        alt: "Audi Argentina",
+      },
+    ],
+    locale: "es_AR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Audi Argentina | Sitio Oficial",
+    description: "Descubrí la gama completa de vehículos Audi en Argentina.",
+    images: ["/og-image.jpg"],
+    creator: "@AudiArg",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  verification: {
+    google: "tu-codigo-google-search-console", // Agregá el código de Google Search Console
+  },
 };
 
 export default function RootLayout({
@@ -26,9 +65,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}>
+      <body 
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+        style={{ backgroundColor: '#101319' }}
+      >
         <Navbar />
-        <main className="flex-1">{children}</main> {/* pt-20 para compensar navbar fijo */}
+        <main className="flex-1">{children}</main>
         <Footer />
       </body>
     </html>

@@ -152,6 +152,18 @@ export default function Footer() {
             </a>
           ))}
         </div>
+
+        {/* Pie de página */}
+        <div className="pt-8 border-t border-gray-800 text-sm text-gray-400">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p>© {new Date().getFullYear()} UB Motors. Todos los derechos reservados.</p>
+            <div className="flex gap-6">
+              <a href="#" className="hover:text-white transition">Términos y condiciones</a>
+              <a href="#" className="hover:text-white transition">Política de privacidad</a>
+              <a href="#" className="hover:text-white transition">Aviso legal</a>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );

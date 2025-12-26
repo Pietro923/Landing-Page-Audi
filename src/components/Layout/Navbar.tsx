@@ -1,144 +1,10 @@
 "use client";
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Menu, Search, MapPin, ChevronDown } from "lucide-react";
+import Image from "next/image";
+import { Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-
-const menuItems = [
-  {
-    label: "Modelos",
-    href: "/es/modelos/",
-    hasDropdown: false,
-  },
-  {
-    label: "Buscar y comprar",
-    href: "/es/buscador-de-stock-nuevo/",
-    hasDropdown: true,
-    subBlocks: [
-      {
-        label: "Buscar",
-        links: [
-          { text: "Vehículos en stock", url: "/es/buscador-de-stock-nuevo/" },
-          { text: "Accesorios originales Audi", url: "/es/servicios-cliente/accesorios-originales-audi/" },
-        ],
-      },
-      {
-        label: "Explorar",
-        links: [
-          { text: "Comparar modelos", url: "/es/modelos/comparar-modelos/" },
-        ],
-      },
-      {
-        label: "Próximos pasos",
-        links: [
-          { text: "Red de concesionarios oficial", url: "/es/concesionarios/red-de-concesionarios/" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Servicios y mantenimiento",
-    href: "/es/servicios-accesorios/",
-    hasDropdown: true,
-    subBlocks: [
-      {
-        label: "Servicios al cliente",
-        links: [
-          { text: "Servicios Audi", url: "/es/servicios-accesorios/" },
-          { text: "Asistencia Audi", url: "/es/servicios-accesorios/asistencia-audi/" },
-          { text: "Workshop test Audi", url: "/es/servicios-accesorios/workshop-test-audi/" },
-          { text: "Manual de usuario", url: "https://ownersmanual.audi.com/home/es_ES", target: "_blank" },
-        ],
-      },
-      {
-        label: "Mantenimiento",
-        links: [
-          { text: "Red de servicio oficial", url: "/es/servicios-accesorios/red-de-servicios/" },
-          { text: "Plan de mantenimiento", url: "/es/servicios-accesorios/plan-de-mantenimiento/" },
-          { text: "Accesorios originales Audi", url: "/es/servicios-cliente/accesorios-originales-audi/" },
-        ],
-      },
-      {
-        label: "Seguridad",
-        links: [
-          { text: "Airbag Takata", url: "/es/recall-takata-airbag/" },
-          { text: "Consultas Recall", url: "/es/servicios-cliente/recall_audi/" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Mundo Audi",
-    href: "/es/mundo-audi/",
-    hasDropdown: true,
-    subBlocks: [
-      {
-        label: "Espacios Audi",
-        links: [
-          { text: "Audi Lounge", url: "/es/AudiLounge/" },
-          { text: "Audi Driving Center", url: "/es/mundo-audi/DrivingCenter/", target: "_blank" },
-        ],
-      },
-      {
-        label: "Eventos",
-        links: [
-          { text: "Audi quattro Cup", url: "/es/mundo-audi/audiquattrocup/" },
-        ],
-      },
-      {
-        label: "Novedades",
-        links: [
-          { text: "Audi F1 ® Project", url: "/es/innovacion-audi/audi-sport/formula-1/" },
-        ],
-      },
-    ],
-  },
-  {
-    label: "Innovación",
-    href: "/es/Innovacion/",
-    hasDropdown: true,
-    subBlocks: [
-      {
-        label: "Eléctricos",
-        links: [
-          { text: "E-movilidad", url: "/es/innovacion-audi/e-movilidad/" },
-          { text: "Modelos eléctricos", url: "/es/modelos/?byvehicletype=BEV" },
-        ],
-      },
-      {
-        label: "Descubrí",
-        links: [
-          { text: "Tecnología", url: "/es/innovacion-audi/tecnologia/" },
-          { text: "Historia", url: "/es/compania/historia/" },
-        ],
-      },
-      {
-        label: "Sport",
-        links: [
-          { text: "Audi Sport", url: "/es/innovacion-audi/audi-sport/" },
-          { text: "Audi F1 ® Project", url: "/es/innovacion-audi/audi-sport/formula-1/" },
-        ],
-      },
-    ],
-  },
-];
-
-const AudiLogo = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="69"
-    height="24"
-    viewBox="0 0 69 24"
-    fill="none"
-    className="w-20 md:w-24 h-auto"
-  >
-    <path
-      d="M57.0623 21.3142C54.9409 21.3142 52.9856 20.5922 51.422 19.3822C53.0087 17.3448 53.9585 14.7826 53.9585 12C53.9585 9.21768 53.0087 6.65544 51.422 4.61784C52.9856 3.408 54.9409 2.68584 57.0623 2.68584C62.1714 2.68584 66.3281 6.86424 66.3281 12C66.3281 17.136 62.1714 21.3142 57.0623 21.3142ZM36.3802 19.3822C37.9672 17.3448 38.917 14.7826 38.917 12C38.917 9.21768 37.9672 6.65544 36.3804 4.61784C37.9438 3.408 39.8997 2.68584 42.0208 2.68584C44.1421 2.68584 46.0975 3.408 47.6611 4.61784C46.0743 6.65544 45.1246 9.21768 45.1246 12C45.1246 14.7826 46.0743 17.3448 47.6611 19.3822C46.0975 20.5922 44.1421 21.3142 42.0208 21.3142C39.8997 21.3142 37.9438 20.5922 36.3802 19.3822ZM21.3387 19.3822C22.9257 17.3448 23.8754 14.7826 23.8754 12C23.8754 9.21768 22.9257 6.65544 21.3389 4.61784C22.9023 3.408 24.8581 2.68584 26.9792 2.68584C29.1003 2.68584 31.0562 3.408 32.6196 4.61784C31.0328 6.65544 30.083 9.21768 30.083 12C30.083 14.7826 31.0328 17.3448 32.6196 19.3822C31.0562 20.5922 29.1003 21.3142 26.9792 21.3142C24.8581 21.3142 22.9023 20.5922 21.3387 19.3822ZM2.6719 12C2.6719 6.86424 6.82861 2.68584 11.9377 2.68584C14.0588 2.68584 16.0147 3.408 17.578 4.61784C15.9913 6.65544 15.0415 9.21768 15.0415 12C15.0415 14.7826 15.9913 17.3448 17.578 19.3822C16.0147 20.5922 14.0588 21.3142 11.9377 21.3142C6.82861 21.3142 2.6719 17.136 2.6719 12ZM19.4585 17.4305C18.3619 15.9005 17.7134 14.0256 17.7134 12C17.7134 9.97464 18.3619 8.09952 19.4585 6.56952C20.5551 8.09952 21.2035 9.97464 21.2035 12C21.2035 14.0256 20.5551 15.9005 19.4585 17.4305ZM34.5 17.4305C33.4034 15.9005 32.7549 14.0256 32.7549 12C32.7549 9.97464 33.4034 8.09952 34.5 6.56952C35.5966 8.09952 36.2451 9.97464 36.2451 12C36.2451 14.0256 35.5966 15.9005 34.5 17.4305ZM49.5415 17.4305C48.4449 15.9005 47.7965 14.0256 47.7965 12C47.7965 9.97464 48.4449 8.09952 49.5415 6.56952C50.6381 8.09952 51.2866 9.97464 51.2866 12C51.2866 14.0256 50.6381 15.9005 49.5415 17.4305ZM57.0623 0C54.2135 0 51.5958 1.00968 49.5415 2.68968C47.4873 1.00968 44.8696 0 42.0208 0C39.1719 0 36.5542 1.00968 34.5 2.68968C32.4458 1.00968 29.8278 0 26.9792 0C24.1304 0 21.5127 1.00968 19.4585 2.68968C17.4042 1.00968 14.7863 0 11.9377 0C5.35526 0 0 5.3832 0 12C0 18.617 5.35526 24 11.9377 24C14.7863 24 17.4042 22.9906 19.4585 21.3103C21.5127 22.9906 24.1304 24 26.9792 24C29.8278 24 32.4458 22.9906 34.5 21.3103C36.5542 22.9906 39.1719 24 42.0208 24C44.8696 24 47.4873 22.9906 49.5415 21.3103C51.5958 22.9906 54.2135 24 57.0623 24C63.6447 24 69 18.617 69 12C69 5.3832 63.6447 0 57.0623 0Z"
-      fill="currentColor"
-    />
-  </svg>
-);
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -154,23 +20,32 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Main navbar - STICKY con efecto similar al de Kia */}
+      {/* Top bar negra (solo desktop) - ESTÁTICA */}
+      <div className="hidden md:flex justify-between items-center bg-[#05141F] px-5 py-1 md:px-10 lg:px-20 text-xs font-semibold text-white z-60">
+        <div className="flex gap-4">
+          <Link href="/contacto" className="hover:underline">CONTÁCTENOS</Link>
+        </div>
+        <div className="flex gap-4">
+          <h2>DE 08:00 A 17:30 - LUNES A VIERNES</h2>
+        </div>
+      </div>
+
+      {/* Main navbar - STICKY con efecto Kia */}
       <nav
         className={`
           fixed top-0 left-0 w-full z-50
           flex justify-between items-center gap-2
-          px-6 py-4 lg:px-20
-          text-base font-medium
+          text-[1rem] font-semibold text-base lg:px-20
           transition-all duration-200 ease-in-out
           ${
             scrolled
-              ? "bg-black text-white"
-              : "bg-transparent text-white hover:bg-black"
+              ? "bg-white text-[#05141F] border-gray-200"
+              : "bg-transparent text-white border-white/20 hover:bg-white hover:text-[#05141F]"
           }
         `}
       >
         {/* Mobile menu button */}
-        <div className="lg:hidden">
+        <div className="md:hidden">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
               <Button
@@ -182,128 +57,271 @@ export default function Navbar() {
                 <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
-            <SheetTitle className="sr-only">Menú de navegación</SheetTitle>
-            <SheetContent side="right" className="w-full bg-black text-white p-0 border-none">
+               <SheetTitle></SheetTitle> {/*esta linea para evitar un error de next */}
+            <SheetContent side="right" className="w-full bg-white p-0 border-none">
               <MobileMenu close={() => setMobileOpen(false)} />
             </SheetContent>
           </Sheet>
         </div>
 
-        {/* Logo central con efecto de brillo */}
-        <div className="flex justify-center items-center">
-          <Link href="/" className="flex items-center">
-            <AudiLogo
+        {/* Left menu (desktop) */}
+        <div className="hidden md:flex gap-10">
+          <MegaMenuDropdown title="Modelos" scrolled={scrolled} />
+          <Link
+            href="/repuestos"
+            className="relative group inline-block"
+          >
+            <p className="cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap">
+              Servicios y Mantenimiento
+            </p>
+            <div
               className={`
-                transition-all duration-300 ease-in-out
-                ${scrolled ? "" : "brightness-100 group-hover:brightness-0 invert"}
-                ${scrolled ? "invert-0" : ""}
-              `}
+              absolute bottom-0.5 left-0 w-full h-px
+              transition-all duration-200 bg-transparent
+              ${scrolled ? "group-hover:bg-[#05141F]" : "group-hover:bg-[#05141F]"}
+            `}
             />
           </Link>
         </div>
 
-        {/* Left menu (desktop) */}
-        <div className="hidden lg:flex gap-10">
-          {menuItems.slice(0, 6).map((item) => (
-            <MegaMenuDropdown key={item.label} item={item} scrolled={scrolled} />
-          ))}
-          {/* Acciones derecha */}
-          <button className="flex items-center gap-2 hover:text-gray-300 transition text-sm whitespace-nowrap">
-            <MapPin size={18} />
-            <span className="hidden xl:inline">Seleccionar un concesionario</span>
-          </button>
+        {/* Logo central con efecto de color */}
+        <div className="flex justify-center items-center">
+          <Link href="/" className="flex items-center gap-3 md:gap-4">
+            {/* Logo Kia */}
+            <Image
+              src="/Logos/Audi.svg"
+              alt="Kia Argentina"
+              width={96}
+              height={24}
+              className={`
+                w-20 md:w-24 h-auto
+                transition-all duration-300 ease-in-out
+                ${scrolled ? "brightness-0" : "brightness-100 group-hover:brightness-0"}
+              `}
+              priority
+            />
+            {/* <div 
+              className={`
+                h-6 md:h-8 w-px
+                transition-all duration-300 ease-in-out
+                ${scrolled ? "bg-[#05141F]" : "bg-white group-hover:bg-[#05141F]"}
+              `}
+            />
+            <Image
+              src="/Logos/CP-Motors-Logo.png"
+              alt="CP Motors"
+              quality={100}
+              width={96}
+              height={32}
+              className={`
+                w-28 md:w-32 h-24
+                transition-all duration-300 ease-in-out
+                ${scrolled ? "brightness-0" : "brightness-100 group-hover:brightness-0"}
+              `}
+              priority
+            /> */}
+          </Link>
+        </div>
+
+        {/* Right menu (desktop) */}
+        <div className="hidden md:flex gap-10">
+          <Link
+            href="/grupo-pueble"
+            className="relative group inline-block"
+          >
+            <p className="cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap">
+              Grupo Pueble
+            </p>
+            <div
+              className={`
+              absolute bottom-0.5 left-0 w-full h-px
+              transition-all duration-200 bg-transparent
+              ${scrolled ? "group-hover:bg-[#05141F]" : "group-hover:bg-[#05141F]"}
+            `}
+            />
+          </Link>
+          <Link
+            href="/sobre-nosotros"
+            className="relative group inline-block"
+          >
+            <p className="cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap">
+              Sobre Nosotros
+            </p>
+            <div
+              className={`
+              absolute bottom-0.5 left-0 w-full h-px
+              transition-all duration-200 bg-transparent
+              ${scrolled ? "group-hover:bg-[#05141F]" : "group-hover:bg-[#05141F]"}
+            `}
+            />
+          </Link>
         </div>
 
         {/* Espacio vacío para balancear en móvil */}
-        <div className="lg:hidden w-6" />
+        <div className="md:hidden w-6" />
       </nav>
     </>
   );
 }
 
-function MegaMenuDropdown({ item, scrolled }: { item: typeof menuItems[0]; scrolled: boolean }) {
+function MegaMenuDropdown({ title }: { title: string; scrolled: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const handleLinkClick = () => {
-    setIsOpen(false);
+  const audiModels = [
+    { name: "A1", img: "/Vehiculos/A1.webp", link: "/modelos/a1", count: 1 },
+    { name: "A3", img: "/Vehiculos/A3.webp", link: "/modelos/a3", count: 6 },
+    { name: "A5", img: "/Vehiculos/A5.webp", link: "/modelos/a5", count: 1 },
+    { name: "A6", img: "/Vehiculos/A6.webp", link: "/modelos/a6", count: 2 },
+    { name: "Q2", img: "/Vehiculos/Q2.webp", link: "/modelos/q2", count: 1 },
+    { name: "Q3", img: "/Vehiculos/Q3.webp", link: "/modelos/q3", count: 3 },
+    { name: "Q5", img: "/Vehiculos/Q5.webp", link: "/modelos/q5", count: 3 },
+    { name: "Q7", img: "/Vehiculos/Q7.webp", link: "/modelos/q7", count: 1 },
+    { name: "Q8", img: "/Vehiculos/Q8.webp", link: "/modelos/q8", count: 2 },
+  ];
+
+  const vehicleCategories = [
+    { name: "Serie A", vehicles: audiModels.filter(m => m.name.startsWith("A")) },
+    { name: "Serie Q", vehicles: audiModels.filter(m => m.name.startsWith("Q")) },
+  ];
+
+  const filteredVehicles = selectedCategory === "all"
+    ? audiModels
+    : vehicleCategories.find(cat => cat.name === selectedCategory)?.vehicles || [];
+
+  const generateWhatsAppLink = (vehicleName: string) => {
+    const message = encodeURIComponent(
+      `¡Hola! Estoy interesado en el Audi ${vehicleName}. ¿Podrían enviarme más información sobre versiones disponibles, precios y opciones de financiación? Gracias.`
+    );
+    return `https://wa.me/5491123456789?text=${message}`; // Cambiá el número real
+  };
+
+  const handleLinkClick = () => setIsOpen(false);
+
+  const handleTitleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsOpen(prev => !prev);
   };
 
   useEffect(() => {
+    if (!isOpen) return;
+
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
+  }, [isOpen]);
 
-  if (!item.hasDropdown) {
-    return (
-      <Link href={item.href} className="relative group inline-block">
-        <p className="cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap">
-          {item.label}
-        </p>
-        <div
-          className={`
-            absolute bottom-0.5 left-0 w-full h-px
-            transition-all duration-200 bg-transparent
-            group-hover:bg-white
-          `}
-        />
-      </Link>
-    );
-  }
+  // Calculamos la altura disponible: desde debajo del navbar hasta el final de la pantalla
+  // 80px es la altura aproximada del navbar, ajustalo si cambia
+  //const maxHeight = typeof window !== "undefined" ? window.innerHeight - 80 : "calc(100vh - 80px)";
 
   return (
-    <div
-      className="static"
-      ref={dropdownRef}
-      onMouseEnter={() => setIsOpen(true)}
-      onMouseLeave={() => setIsOpen(false)}
-    >
+    <div className="relative" ref={dropdownRef}>
+      {/* Botón "Modelos" */}
       <div className="relative group inline-block">
         <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-1 cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap bg-transparent border-none text-inherit font-inherit p-0"
+          onClick={handleTitleClick}
+          className="cursor-pointer transition-all ease-in-out duration-100 whitespace-nowrap block bg-transparent border-none text-inherit font-inherit p-0"
+          aria-haspopup="true"
+          aria-expanded={isOpen}
         >
-          {item.label}
-          <ChevronDown size={16} className={`transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
+          {title}
         </button>
         <div
-          className={`
-            absolute bottom-0.5 left-0 w-full h-px
-            transition-all duration-200 bg-transparent
-            group-hover:bg-white
-          `}
+          className={`absolute bottom-0 left-0 h-px transition-all duration-300 ${
+            isOpen ? "bg-current w-full" : "bg-transparent group-hover:bg-current group-hover:w-full"
+          }`}
         />
       </div>
 
-      {/* Mega menú desktop */}
+      {/* Mega menú con scroll interno */}
       {isOpen && (
-        <div className="absolute left-0 right-0 bg-black text-white shadow-lg z-40 w-full">
-          <div className="px-10 lg:px-20 py-8">
-            <div className="grid grid-cols-3 gap-10 max-w-6xl mx-auto">
-              {item.subBlocks?.map((block) => (
-                <div key={block.label}>
-                  <h4 className="font-bold mb-4 text-base text-gray-400">{block.label}</h4>
-                  <ul className="space-y-3">
-                    {block.links.map((link) => (
-                      <li key={link.text}>
-                        <Link
-                          href={link.url}
-                          target={link.target || "_self"}
-                          className="text-sm hover:text-gray-300 transition block"
-                          onClick={handleLinkClick}
-                        >
-                          {link.text}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+        <div className="fixed inset-x-0 top-[80px] bg-white text-[#05141F] shadow-2xl z-50 flex flex-col" style={{ height: `calc(100vh - 80px)` }}>
+          {/* Área con scroll */}
+          <div className="flex-1 overflow-y-auto">
+            <div className="mx-auto max-w-screen-2xl px-6 md:px-10 lg:px-20 py-10">
+              {/* Filtros */}
+              <div className="hidden md:flex justify-start gap-12 pb-8 border-b border-gray-200">
+                <button
+                  onClick={() => setSelectedCategory("all")}
+                  className={`text-sm font-medium pb-3 border-b-2 transition ${
+                    selectedCategory === "all"
+                      ? "border-[#05141F] text-[#05141F]"
+                      : "border-transparent text-gray-600 hover:text-[#05141F]"
+                  }`}
+                >
+                  Todos los modelos
+                </button>
+                {vehicleCategories.map((category) => (
+                  <button
+                    key={category.name}
+                    onClick={() => setSelectedCategory(category.name)}
+                    className={`text-sm font-medium pb-3 border-b-2 transition ${
+                      selectedCategory === category.name
+                        ? "border-[#05141F] text-[#05141F]"
+                        : "border-transparent text-gray-600 hover:text-[#05141F]"
+                    }`}
+                  >
+                    {category.name}
+                  </button>
+                ))}
+              </div>
+
+              {/* Grid de modelos */}
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 pb-10">
+                {filteredVehicles.map((model) => (
+                  <div key={model.name} className="group text-center">
+                    <Link href={model.link} onClick={handleLinkClick}>
+                      <div className="aspect-[4/3] relative overflow-hidden rounded-xl bg-gray-50 mb-6">
+                        <Image
+                          src={model.img}
+                          alt={`Audi ${model.name}`}
+                          fill
+                          className="object-contain p-8 transition-transform duration-500 group-hover:scale-110"
+                          priority
+                        />
+                      </div>
+                      <h3 className="text-xl font-bold mb-2">{model.name}</h3>
+                      <p className="text-sm text-gray-600 mb-6">
+                        {model.count} {model.count === 1 ? "versión" : "versiones"} disponible{model.count > 1 ? "s" : ""}
+                      </p>
+                    </Link>
+
+                    <Link
+                      href={generateWhatsAppLink(model.name)}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={handleLinkClick}
+                    >
+                      <button className="w-full py-3.5 border border-[#05141F] rounded-full font-semibold text-[#05141F] hover:bg-[#05141F] hover:text-white transition duration-300">
+                        Consultar por WhatsApp
+                      </button>
+                    </Link>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Footer fijo al fondo (siempre visible) */}
+          <div className="border-t border-gray-200 bg-gray-50">
+            <div className="mx-auto max-w-screen-2xl px-6 md:px-10 lg:px-20 py-6 text-center">
+              <Link
+                href="/modelos"
+                onClick={handleLinkClick}
+                className="inline-flex items-center text-lg font-bold hover:text-gray-700 transition"
+              >
+                Explorar todos los modelos
+                <svg className="ml-3 w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
@@ -312,81 +330,213 @@ function MegaMenuDropdown({ item, scrolled }: { item: typeof menuItems[0]; scrol
   );
 }
 
+// Menú móvil actualizado
 function MobileMenu({ close }: { close: () => void }) {
   const [openSection, setOpenSection] = useState<string | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
+
+  // DATOS DE VEHÍCULOS (mismo que antes)
+  const vehicleCategories = [
+    {
+      name: "Autos",
+      vehicles: [
+        {
+          name: "All-new K3 Sedán",
+          img: "/navbar/k3sedan.webp",
+          link: "/todos-los-modelos/K3-Sedan",
+          prices: [{ version: "EX*" }, { version: "GT-Line*" }],
+        },
+      ],
+    },
+    {
+      name: "SUV",
+      vehicles: [
+        { name: "All-new K3 Cross", img: "/navbar/k3cross.webp", link: "/todos-los-modelos/K3-Cross", prices: [{ version: "EX*" }, { version: "GT-Line*" }] },
+        { name: "Seltos", img: "/navbar/seltos.webp", link: "/todos-los-modelos/Seltos", prices: [{ version: "LX 1.5 A/T*" }] },
+        { name: "Sportage", img: "/navbar/sportage.webp", link: "/todos-los-modelos/Sportage", prices: [{ version: "EX 2.0 4x2 ATT*" }, { version: "X-line 2.0R AWD AT*" }] },
+        { name: "Carnival", img: "/navbar/carnival.webp", link: "/todos-los-modelos/Carnival", prices: [{ version: "EX 2.2R A/T*" }, { version: "SX 2.2R A/T*" }] },
+      ],
+    },
+    {
+      name: "Utilitarios",
+      vehicles: [
+        { name: "K2500", img: "/navbar/k2500.webp", link: "/todos-los-modelos/K2500", prices: [{ version: "CS 2.5T MT*" }] },
+      ],
+    },
+  ];
+
+  const filteredVehicles = selectedCategory === "all"
+    ? vehicleCategories.flatMap(cat => cat.vehicles)
+    : vehicleCategories.find(cat => cat.name === selectedCategory)?.vehicles || [];
+
+  const generateWhatsAppLink = (vehicleName: string) => {
+    const message = encodeURIComponent(`¡Hola! Me interesa el ${vehicleName}. ¿Podrían enviarme más detalles y precios?`);
+    return `https://wa.me/5493814132674?text=${message}`;
+  };
+
   const handleLinkClick = () => close();
 
+  const menuItems = [
+    { title: "Ventas", expandable: true },
+    { title: "Post Venta", href: "/post-venta" },
+    { title: "Repuestos", href: "/repuestos" },
+    { title: "Grupo Pueble", href: "/grupo-pueble" },
+    { title: "Sobre Nosotros", href: "/sobre-nosotros" },
+  ];
+
   return (
-    <div className="h-full flex flex-col bg-black text-white">
-      {/* Header móvil */}
-      <div className="flex items-center justify-between p-6 border-b border-gray-800">
-        <Link href="/" onClick={handleLinkClick}>
-          <AudiLogo />
+    <div className="h-full flex flex-col bg-white">
+      {/* Header del menú móvil */}
+      <div className="flex items-center justify-between p-4 border-b border-gray-200">
+        <Link href="/" onClick={handleLinkClick} className="flex items-center gap-3">
+          <Image
+            src="/Logos/Audi.svg"
+            alt="Kia"
+            width={96}
+            height={24}
+            className="brightness-0"
+          />
+          {/* <div className="h-6 w-px bg-gray-300" />
+          <Image
+            src="/Logos/CP-Motors-Logo.png"
+            alt="CP Motors"
+            width={110}
+            height={40}
+            className="brightness-0"
+          /> */}
         </Link>
+        {/* <button
+          onClick={close}
+          className="p-2 rounded-full hover:bg-gray-100 transition"
+          aria-label="Cerrar menú"
+        >
+          <svg className="w-6 h-6 text-[#05141F]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button> */}
       </div>
 
       {/* Contenido scrollable */}
       <div className="flex-1 overflow-y-auto">
         {menuItems.map((item) => (
-          <div key={item.label} className="border-b border-gray-800">
-            {!item.hasDropdown ? (
+          <div key={item.title} className="border-b border-gray-100">
+            {item.href ? (
               <Link
                 href={item.href}
                 onClick={handleLinkClick}
-                className="block px-6 py-4 text-lg font-medium hover:bg-white/10 transition"
+                className="block px-6 py-4 text-lg font-medium hover:bg-gray-50 transition"
               >
-                {item.label}
+                {item.title}
               </Link>
             ) : (
-              <>
-                <button
-                  onClick={() => setOpenSection(openSection === item.label ? null : item.label)}
-                  className="w-full flex justify-between items-center px-6 py-4 text-lg font-medium hover:bg-white/10 transition"
+              <button
+                onClick={() => setOpenSection(openSection === item.title ? null : item.title)}
+                className="w-full flex justify-between items-center px-6 py-4 text-lg font-medium hover:bg-gray-50 transition"
+              >
+                <span>{item.title}</span>
+                <svg
+                  className={`w-5 h-5 transition-transform duration-300 ${openSection === item.title ? "rotate-180" : ""}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
                 >
-                  <span>{item.label}</span>
-                  <ChevronDown
-                    size={20}
-                    className={`transition-transform duration-300 ${openSection === item.label ? "rotate-180" : ""}`}
-                  />
-                </button>
-                {openSection === item.label && (
-                  <div className="bg-white/5 px-6 py-6">
-                    {item.subBlocks?.map((block) => (
-                      <div key={block.label} className="mb-8 last:mb-0">
-                        <h4 className="font-bold text-sm text-gray-400 mb-4">{block.label}</h4>
-                        <ul className="space-y-3">
-                          {block.links.map((link) => (
-                            <li key={link.text}>
-                              <Link
-                                href={link.url}
-                                target={link.target || "_self"}
-                                className="block text-base hover:text-gray-300 transition py-1"
-                                onClick={handleLinkClick}
-                              >
-                                {link.text}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+            )}
+
+            {/* Contenido expandido: solo para Ventas */}
+            {item.expandable && openSection === item.title && (
+              <div className="pb-6">
+                {/* Filtros móviles */}
+                <div className="px-4 pt-4">
+                  <div className="grid grid-cols-2 gap-2">
+                    {["all", "Autos", "SUV", "Utilitarios"].map((cat) => (
+                      <button
+                        key={cat}
+                        onClick={() => setSelectedCategory(cat)}
+                        className={`py-2 px-4 rounded-full text-sm font-medium transition ${
+                          selectedCategory === cat
+                            ? "bg-[#05141F] text-white"
+                            : "bg-gray-100 text-[#05141F] hover:bg-gray-200"
+                        }`}
+                      >
+                        {cat === "all" ? "Todos" : cat}
+                      </button>
                     ))}
                   </div>
-                )}
-              </>
+                </div>
+
+                {/* Grid de vehículos */}
+                <div className="mt-6 grid grid-cols-1 gap-6 px-4">
+                  {filteredVehicles.map((vehicle) => (
+                    <div key={vehicle.name} className="bg-gray-50 rounded-2xl overflow-hidden shadow-sm">
+                      <Link href={vehicle.link} onClick={handleLinkClick}>
+                        <Image
+                          src={vehicle.img}
+                          alt={vehicle.name}
+                          width={400}
+                          height={250}
+                          className="w-full h-48 object-contain"
+                        />
+                        <div className="p-4 text-center">
+                          <h4 className="font-bold text-lg">{vehicle.name}</h4>
+                          <div className="mt-2 space-y-1">
+                            {vehicle.prices.map((p, i) => (
+                              <p key={i} className="text-sm text-gray-600">{p.version}</p>
+                            ))}
+                          </div>
+                        </div>
+                      </Link>
+                      <div className="px-4 pb-4">
+                        <Link
+                          href={generateWhatsAppLink(vehicle.name)}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="block w-full"
+                          onClick={handleLinkClick}
+                        >
+                          <button className="w-full bg-[#05141F] text-white py-3 rounded-full font-semibold hover:bg-[#37434C] transition flex items-center justify-center gap-2">
+                            Consultar por WhatsApp
+                            <svg className="w-5 h-5" viewBox="0 0 32 32" fill="none">
+                              <rect width="32" height="32" rx="16" fill="white" />
+                              <path d="M19.9 16.2L13.8 24.5H12L18.3 16.5L12 8.5H13.8L19.9 16.2Z" fill="#05141F" />
+                            </svg>
+                          </button>
+                        </Link>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Ver todos los modelos */}
+                <div className="px-4 mt-6 pb-4">
+                  <Link
+                    href="/todos-los-modelos"
+                    onClick={handleLinkClick}
+                    className="block text-center text-[#05141F] font-bold py-3 border border-[#05141F] rounded-full hover:bg-[#05141F] hover:text-white transition"
+                  >
+                    Ver todos los modelos →
+                  </Link>
+                </div>
+              </div>
             )}
           </div>
         ))}
 
-        {/* Footer acciones móvil */}
-        <div className="p-6 space-y-4 border-t border-gray-800">
-          <button className="w-full flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 transition py-4 rounded-lg font-medium">
-            <MapPin size={20} />
-            Seleccionar un concesionario
-          </button>
-          <button className="w-full flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 transition py-4 rounded-lg font-medium">
-            <Search size={20} />
-            Buscar
-          </button>
+        {/* Footer contacto */}
+        <div className="p-6 bg-gray-50 border-t border-gray-200">
+          <Link
+            href="/contacto"
+            onClick={handleLinkClick}
+            className="flex items-center justify-center gap-3 text-[#05141F] font-semibold"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            CONTÁCTENOS
+          </Link>
+          <p className="text-center text-sm text-gray-600 mt-2">DE 08:00 A 17:30 - LUNES A VIERNES</p>
         </div>
       </div>
     </div>

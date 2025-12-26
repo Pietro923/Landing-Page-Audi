@@ -221,7 +221,7 @@ export default function Navbar() {
   );
 }
 
-function MegaMenuDropdown({ item, scrolled }: { item: typeof menuItems[0]; scrolled: boolean }) {
+function MegaMenuDropdown({ item }: { item: typeof menuItems[0]; scrolled: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 

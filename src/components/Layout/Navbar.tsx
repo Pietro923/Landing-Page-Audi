@@ -189,14 +189,14 @@ function MegaMenuDropdown({ title, scrolled }: { title: string; scrolled: boolea
 
   const audiModels = [
     { name: "A1", img: "/Vehiculos/A1.webp", link: "/modelos/A1", count: 1 },
-    { name: "A3", img: "/Vehiculos/A3.webp", link: "/modelos/a3", count: 6 },
-    { name: "A5", img: "/Vehiculos/A5.webp", link: "/modelos/a5", count: 1 },
-    { name: "A6", img: "/Vehiculos/A6.webp", link: "/modelos/a6", count: 2 },
-    { name: "Q2", img: "/Vehiculos/Q2.webp", link: "/modelos/q2", count: 1 },
-    { name: "Q3", img: "/Vehiculos/Q3.webp", link: "/modelos/q3", count: 3 },
-    { name: "Q5", img: "/Vehiculos/Q5.webp", link: "/modelos/q5", count: 3 },
-    { name: "Q7", img: "/Vehiculos/Q7.webp", link: "/modelos/q7", count: 1 },
-    { name: "Q8", img: "/Vehiculos/Q8.webp", link: "/modelos/q8", count: 2 },
+    { name: "A3", img: "/Vehiculos/A3.webp", link: "/modelos/A3", count: 6 },
+    { name: "A5", img: "/Vehiculos/A5.webp", link: "/modelos/A5", count: 1 },
+    { name: "A6", img: "/Vehiculos/A6.webp", link: "/modelos/A6", count: 2 },
+    { name: "Q2", img: "/Vehiculos/Q2.webp", link: "/modelos/Q2", count: 1 },
+    { name: "Q3", img: "/Vehiculos/Q3.webp", link: "/modelos/Q3", count: 3 },
+    { name: "Q5", img: "/Vehiculos/Q5.webp", link: "/modelos/Q5", count: 3 },
+    { name: "Q7", img: "/Vehiculos/Q7.webp", link: "/modelos/Q7", count: 1 },
+    { name: "Q8", img: "/Vehiculos/Q8.webp", link: "/modelos/Q8", count: 2 },
   ];
 
   const vehicleCategories = [

@@ -59,12 +59,6 @@ export default function A1Page() {
               Configurar
             </Link>
             <Link
-              href="/stock?modelo=a1"
-              className="px-8 py-4 bg-white/10 border border-white/30 rounded-full font-semibold hover:bg-white/20"
-            >
-              Ver stock
-            </Link>
-            <Link
               href="/contacto"
               className="px-8 py-4 bg-white/10 border border-white/30 rounded-full font-semibold hover:bg-white/20"
             >

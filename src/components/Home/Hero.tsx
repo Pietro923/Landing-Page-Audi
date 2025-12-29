@@ -1,73 +1,178 @@
-import Link from 'next/link';
-import Image from 'next/image';
+"use client";
 
-export default function Hero() {
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+export default function Home() {
+  const [, setScrolled] = useState(false);
+  const [, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Embla Carousel config
+  const autoplay = Autoplay({ delay: 5000, stopOnInteraction: false });
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    { loop: true, align: "center" },
+    [autoplay]
+  );
+  const [selectedIndex, setSelectedIndex] = useState(0);
+
+  const scrollTo = (index: number) => emblaApi && emblaApi.scrollTo(index);
+  const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
+  const scrollNext = () => emblaApi && emblaApi.scrollNext();
+
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.on("select", () => {
+        setSelectedIndex(emblaApi.selectedScrollSnap());
+      });
+    }
+  }, [emblaApi]);
+
+  const slides = [
+    {
+      title: "Audi Q5",
+      subtitle: "Inspiración sin límites",
+      link: "",
+      imageDesktop: "/Hero/Q5-desktop.jpg",
+      imageMobile: "/Hero/Q5-mobile.jpg",
+    },
+    {
+      title: "Audi Q5 2",
+      subtitle: "Inspiración sin límites",
+      link: "",
+      imageDesktop: "/Hero/Q5-desktop.jpg",
+      imageMobile: "/Hero/Q5-mobile.jpg",
+    },
+    
+  ];
+
+  const emblaStyles = `
+    .embla {
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+    }
+    .embla__container {
+      display: flex;
+      height: 100%;
+    }
+    .embla__slide {
+      flex: 0 0 100%;
+      min-width: 0;
+      position: relative;
+      height: 100%;
+    }
+  `;
+
   return (
-    <section className="relative w-full min-h-screen overflow-hidden bg-black">
-      {/* Contenedor de imagen de fondo */}
-      <div className="absolute inset-0 z-0">
-        {/* Imagen para desktop */}
-        <div className="hidden md:block w-full h-full relative">
-          <Image
-            src="/Hero/Q5-desktop.avif"
-            alt="Nuevo Audi Q5"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
-        
-        {/* Imagen para mobile */}
-        <div className="block md:hidden w-full h-full relative">
-          <Image
-            src="/Hero/Q5-mobile.avif"
-            alt="Nuevo Audi Q5"
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-        </div>
+    <>
+      <style jsx global>{emblaStyles}</style>
+      
+      {/* HERO FULL SCREEN */}
+      <section className="relative h-screen overflow-hidden -mt-6">
+        <div className="embla" ref={emblaRef}>
+          <div className="embla__container z-30">
+            {slides.map((slide, index) => (
+              <div key={index} className="embla__slide">
+                <div className="absolute inset-0 hidden md:block">
+                  <Image
+                    src={slide.imageDesktop}
+                    alt={slide.title}
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                    sizes="100vw"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+                </div>
 
-        {/* Overlay gradient para mejorar legibilidad */}
-        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent" />
-      </div>
+                <div className="absolute inset-0 block md:hidden">
+                  <Image
+                    src={slide.imageMobile}
+                    alt={slide.title}
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                    sizes="100vw"
+                  />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+                </div>
 
-      {/* Contenido del hero */}
-      <div className="relative z-10 container mx-auto px-6 h-screen flex flex-col justify-end pb-16 md:pb-24 lg:pb-32">
-        <div className="max-w-2xl">
-          {/* Headline */}
-          <h1 className="text-white text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6 leading-tight tracking-tight">
-            Nuevo Audi Q5
-          </h1>
-
-          {/* Subline */}
-          <p className="text-white text-2xl md:text-3xl lg:text-4xl font-light mb-8 md:mb-10 tracking-wide">
-            Incomparable
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/es/modelos/q5/"
-              className="inline-flex items-center justify-center bg-white text-black px-8 py-4 text-base md:text-lg font-semibold hover:bg-gray-100 transition-all duration-300 rounded uppercase tracking-wider shadow-lg hover:shadow-xl"
-            >
-              Descubrí todos los modelos Q5
-            </Link>
+                <div className="relative z-10 h-full flex flex-col items-center justify-end pb-16 text-white px-6 mb-10">
+                  <div className="text-center">
+                    <h1 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-2 md:mb-4">
+                      {slide.title}
+                    </h1>
+                    <p className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl">
+                      {slide.subtitle}
+                    </p>
+                    <Link
+                      href={slide.link}
+                      className="group mt-6 md:mt-8 inline-block"
+                    >
+                      <div className="bg-white text-[#05141F] font-bold text-sm md:text-base py-3 px-8 md:py-4 md:px-10 hover:bg-[#37434C] hover:text-white transition-all duration-300">
+                        <span className="relative">
+                          Conocer más
+                          <span className="absolute left-0 -bottom-1 w-0 h-px bg-[#05141F] transition-all duration-300 group-hover:w-full group-hover:bg-white" />
+                        </span>
+                      </div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
 
-      {/* Scroll indicator (opcional) */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 hidden lg:block">
-        <div className="flex flex-col items-center gap-2 text-white opacity-70 hover:opacity-100 transition-opacity">
-          <span className="text-sm uppercase tracking-wider">Scroll</span>
-          <div className="w-6 h-10 border-2 border-white rounded-full flex items-start justify-center p-2">
-            <div className="w-1 h-3 bg-white rounded-full animate-bounce" />
-          </div>
+        <button
+          onClick={scrollPrev}
+          className="absolute left-4 md:left-8 top-1/2 transform -translate-y-1/2 z-20 p-2 bg-black/30 hover:bg-black/50 text-white rounded-full transition-all"
+          aria-label="Slide anterior"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        <button
+          onClick={scrollNext}
+          className="absolute right-4 md:right-8 top-1/2 transform -translate-y-1/2 z-20 p-2 bg-black/30 hover:bg-black/50 text-white rounded-full transition-all"
+          aria-label="Slide siguiente"
+        >
+          <ChevronRight size={24} />
+        </button>
+
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex gap-2">
+          {slides.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => scrollTo(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                selectedIndex === index
+                  ? "bg-white"
+                  : "bg-white/50 hover:bg-white/80"
+              }`}
+              aria-label={`Ir al slide ${index + 1}`}
+            />
+          ))}
         </div>
-      </div>
-    </section>
+      </section>
+         </>
   );
 }

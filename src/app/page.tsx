@@ -32,7 +32,7 @@ const tiles = [
   },
   {
     title: 'Red de concesionarios',
-    href: '/es/concesionarios/red-de-concesionarios/',
+    href: '/concesionarios',
     image: '/Home/entrega-llave-Home.avif',
   },
 ];

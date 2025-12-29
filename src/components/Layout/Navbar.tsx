@@ -23,22 +23,64 @@ export default function Navbar() {
     <>
       {/* Top bar oscura (solo desktop) - ESTÁTICA */}
       <div className="hidden md:flex justify-between items-center bg-[#101319] px-5 py-2 md:px-10 lg:px-20 text-xs text-gray-300 z-60">
-        <div className="flex gap-6">
-          <Link href="/contacto" className="hover:text-white transition-colors duration-200">
-            CONTÁCTENOS
-          </Link>
-          <Link href="/test-drive" className="hover:text-white transition-colors duration-200">
-            SOLICITAR TEST DRIVE
-          </Link>
-        </div>
-        <div className="flex gap-6">
-          <span className="text-gray-400">DE 08:00 A 17:30 - LUNES A VIERNES</span>
-          <Link href="/concesionarios" className="hover:text-white transition-colors duration-200 flex items-center gap-1">
-            <MapPin size={14} />
-            ENCONTRAR CONCESIONARIO
-          </Link>
-        </div>
+  <div className="flex gap-6">
+    <Link href="/contacto" className="hover:text-white transition-colors duration-200">
+      CONTÁCTENOS
+    </Link>
+  </div>
+
+  <div className="relative group">
+    <div className="flex items-center gap-1 cursor-pointer hover:text-white transition-colors duration-200">
+      <MapPin size={14} />
+      <span className="text-gray-400 group-hover:text-white">NUESTRAS SUCURSALES</span>
+      <ChevronDown size={12} className="transition-transform group-hover:rotate-180" />
+    </div>
+
+    {/* Dropdown al hover */}
+    <div className="absolute right-0 top-full mt-2 w-64 bg-[#101319] border border-white/20 rounded-lg shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+      <div className="py-3">
+        <Link
+          href="https://maps.app.goo.gl/T5q3Wp6M3vaJyFka9"
+          target="_blank"                  // ← Abre en nueva pestaña
+          rel="noopener noreferrer"        // ← Seguridad recomendada
+          className="flex items-center px-5 py-3 hover:bg-white/10 transition-colors duration-200 text-sm"
+        >
+          <MapPin size={14} className="mr-2 shrink-0" />
+          <div>
+            <p className="font-medium">Tucumán Centro</p>
+            <p className="text-xs text-gray-400">Santiago del Estero 902</p>
+          </div>
+        </Link>
+
+        <Link
+          href="https://maps.app.goo.gl/D2NWdvHjD7kXUvLy5"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center px-5 py-3 hover:bg-white/10 transition-colors duration-200 text-sm"
+        >
+          <MapPin size={14} className="mr-2 shrink-0" />
+          <div>
+            <p className="font-medium">Tucumán Yerba Buena</p>
+            <p className="text-xs text-gray-400">Av. Aconquija 1090</p>
+          </div>
+        </Link>
+
+        <Link
+          href="https://maps.app.goo.gl/NdJzWHRAxTDTK4Wz8"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center px-5 py-3 hover:bg-white/10 transition-colors duration-200 text-sm"
+        >
+          <MapPin size={14} className="mr-2 shrink-0" />
+          <div>
+            <p className="font-medium">Salta</p>
+            <p className="text-xs text-gray-400">Av. Belgrano 1050</p>
+          </div>
+        </Link>
       </div>
+    </div>
+  </div>
+</div>
 
       {/* Main navbar - STICKY con efecto glassmorphism */}
       <nav
@@ -146,7 +188,7 @@ function MegaMenuDropdown({ title, scrolled }: { title: string; scrolled: boolea
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   const audiModels = [
-    { name: "A1", img: "/Vehiculos/A1.webp", link: "/modelos/a1", count: 1 },
+    { name: "A1", img: "/Vehiculos/A1.webp", link: "/modelos/A1", count: 1 },
     { name: "A3", img: "/Vehiculos/A3.webp", link: "/modelos/a3", count: 6 },
     { name: "A5", img: "/Vehiculos/A5.webp", link: "/modelos/a5", count: 1 },
     { name: "A6", img: "/Vehiculos/A6.webp", link: "/modelos/a6", count: 2 },

@@ -56,11 +56,11 @@ export default function Home() {
       imageMobile: "/Hero/Q5-mobile.jpg",
     },
     {
-      title: "Audi Q5 2",
-      subtitle: "Inspiración sin límites",
+      title: "Audi A5",
+      subtitle: "Velocidad y calidad",
       link: "",
-      imageDesktop: "/Hero/Q5-desktop.jpg",
-      imageMobile: "/Hero/Q5-mobile.jpg",
+      imageDesktop: "/Hero/A5.jpg",
+      imageMobile: "/Hero/A5.jpg",
     },
     
   ];

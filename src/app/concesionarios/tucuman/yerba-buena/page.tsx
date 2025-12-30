@@ -9,7 +9,7 @@ export default function YerbaBuena() {
       <section className="relative h-[60vh] min-h-125 bg-[#101319]">
         <div className="absolute inset-0">
           <Image
-            src="/concesionarios/tucuman/yerbabuena-exterior.jpg"
+            src="/Concesionarios/yb/entrada.jpg"
             alt="Concesionario Audi Yerba Buena"
             fill
             className="object-cover opacity-40"

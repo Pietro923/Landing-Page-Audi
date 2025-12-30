@@ -9,7 +9,7 @@ export default function Salta() {
       <section className="relative h-[60vh] min-h-125 bg-[#101319]">
         <div className="absolute inset-0">
           <Image
-            src="/concesionarios/salta/exterior.jpg"
+            src="/concesionarios/salta/Salta.jpg"
             alt="Concesionario Audi Salta"
             fill
             className="object-cover opacity-40"
@@ -27,7 +27,7 @@ export default function Salta() {
             <Button size="lg" className="bg-white text-black hover:bg-gray-200">
               Contactar ahora
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black">
+            <Button size="lg" variant="outline" className="bg-white text-black hover:bg-gray-200">
               Ver stock disponible
             </Button>
           </div>
@@ -74,12 +74,8 @@ export default function Salta() {
         <div className="max-w-screen-2xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Tu Concesionario Audi en Salta
+              Tu Concesionario Audi y Ducati en Salta
             </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Más de 15 años representando a Audi en el norte argentino, 
-              brindando experiencias premium y servicio de excelencia.
-            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
@@ -242,7 +238,7 @@ export default function Salta() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="relative h-125 rounded-lg overflow-hidden">
               <Image
-                src="/concesionarios/salta/showroom-interior.jpg"
+                src="/concesionarios/salta/exterior.jpg"
                 alt="Showroom Audi Salta"
                 fill
                 className="object-cover"
@@ -295,7 +291,7 @@ export default function Salta() {
           <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
             Nuestras Instalaciones
           </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             <div className="relative h-62.5 rounded-lg overflow-hidden">
               <Image
                 src="/concesionarios/salta/taller.jpg"
@@ -309,7 +305,7 @@ export default function Salta() {
             </div>
             <div className="relative h-62.5 rounded-lg overflow-hidden">
               <Image
-                src="/concesionarios/salta/sala-espera.jpg"
+                src="/concesionarios/salta/sala.jpg"
                 alt="Sala de espera"
                 fill
                 className="object-cover"
@@ -318,7 +314,7 @@ export default function Salta() {
                 <p className="text-white text-xl font-semibold">Sala VIP</p>
               </div>
             </div>
-            <div className="relative h-62.5 rounded-lg overflow-hidden">
+            {/* <div className="relative h-62.5 rounded-lg overflow-hidden">
               <Image
                 src="/concesionarios/salta/entrega.jpg"
                 alt="Entrega de vehículos"
@@ -328,13 +324,13 @@ export default function Salta() {
               <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
                 <p className="text-white text-xl font-semibold">Centro de Entrega</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
 
       {/* Mapa */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-screen-2xl mx-auto px-6">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             Ubicación Privilegiada
@@ -342,10 +338,17 @@ export default function Salta() {
           <p className="text-center text-gray-600 mb-12">
             Sobre Av. Belgrano, una de las principales avenidas de Salta Capital, con fácil acceso y estacionamiento.
           </p>
-          <div className="bg-gray-100 h-125 rounded-lg flex items-center justify-center">
-            <p className="text-gray-500">
-              [Mapa interactivo - Integrar con Google Maps API]
-            </p>
+          <div className="w-full h-112.5 md:h-125 lg:h-150 rounded-lg overflow-hidden shadow-lg">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.250254351405!2d-65.4195342248504!3d-24.78688287797744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941bc3006a2ab149%3A0x8c329e44218bb0!2sAudi%20Ub%20Motors%20Salta!5e0!3m2!1ses-419!2sar!4v1767122254894!5m2!1ses-419!2sar" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Ubicación Audi Salta"
+            />
           </div>
         </div>
       </section>
@@ -365,10 +368,10 @@ export default function Salta() {
               <Button size="lg" className="bg-white text-black hover:bg-gray-200">
                 (387) 431-5000
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black">
+              <Button size="lg" variant="outline" className="bg-white text-black hover:bg-gray-200">
                 Escribinos por WhatsApp
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-black">
+              <Button size="lg" variant="outline" className="bg-white text-black hover:bg-gray-200">
                 Enviar email
               </Button>
             </div>

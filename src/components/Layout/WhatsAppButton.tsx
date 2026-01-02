@@ -6,7 +6,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 import { useState } from "react"
-import { MessageSquare, ChevronRight, Wrench } from "lucide-react"
+import { MessageSquare, ChevronRight, Wrench, Phone } from "lucide-react"
 import Image from "next/image"
 
 export function WhatsAppButton() {
@@ -16,24 +16,24 @@ export function WhatsAppButton() {
     {
       title: "Ventas",
       description: "Consultas sobre vehículos, precios y financiación",
-      phone: "543814132674",
-      message: "Hola, me gustaría obtener información sobre los vehículos Kia disponibles.",
+      phone: "",
+      message: "Hola, me gustaría obtener información sobre los modelos de Audi disponibles.",
       icon: <MessageSquare className="w-5 h-5 text-green-600" />
     },
     {
       title: "PostVenta",
       description: "Agenda tu service, consultas técnicas y repuestos",
-      phone: "543816900960",
-      message: "Hola, necesito consultar sobre el service de mi vehículo Kia.",
+      phone: "",
+      message: "Hola, necesito consultar sobre el service de mi Audi.",
       icon: <Wrench className="w-5 h-5 text-green-600" />
     },
-    // {
-    //   title: "Atención General",
-    //   description: "Otras consultas y atención al cliente",
-    //   phone: "5493814533819",
-    //   message: "Hola, tengo una consulta sobre CP Motors.",
-    //   icon: <Phone className="w-5 h-5 text-green-600" />
-    // },
+    {
+     title: "Repuestos",
+     description: "Consultas sobre piezas y accesorios originales",
+    phone: "",
+     message: "Hola, tengo una consulta sobre los repuestos disponibles.",
+     icon: <Phone className="w-5 h-5 text-green-600" />
+    },
   ]
   
   const handleOptionClick = (phone: string, message: string) => {

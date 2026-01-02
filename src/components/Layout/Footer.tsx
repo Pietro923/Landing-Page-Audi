@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Facebook, Linkedin, Instagram, MapPin, Phone, Mail, Clock } from 'lucide-react';
+import { PietroButton } from './p-popover';
 
 const footerCategories = [
   { title: 'Modelos', links: ['Todos los modelos', 'Sportback', 'SUV', 'e-tron', 'Sedán', 'Coupé', 'Sport']},
@@ -111,7 +112,25 @@ export default function Footer() {
               Trabajá con Nosotros
             </a>
           </div>
+
+          {/* Redes sociales */}
+          <div className="flex justify-end gap-6">
+            {socialLinks.map(({ Icon, href, label }) => (
+              <a 
+                key={label} 
+                href={href} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                aria-label={label}
+                className="hover:text-gray-300 transition"
+              >
+                <Icon size={24} />
+              </a>
+            ))}
+          </div>
+
         </div>
+        
 
         {/* Categorías */}
         <div className="space-y-8 lg:space-y-0 lg:grid lg:grid-cols-6 lg:gap-8 mb-12">
@@ -137,30 +156,12 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Redes sociales */}
-        <div className="flex justify-end gap-6 my-10">
-          {socialLinks.map(({ Icon, href, label }) => (
-            <a 
-              key={label} 
-              href={href} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              aria-label={label}
-              className="hover:text-gray-300 transition"
-            >
-              <Icon size={24} />
-            </a>
-          ))}
-        </div>
-
         {/* Pie de página */}
         <div className="pt-8 border-t border-gray-800 text-sm text-gray-400">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p>© {new Date().getFullYear()} UB Motors. Todos los derechos reservados.</p>
             <div className="flex gap-6">
-              <a href="#" className="hover:text-white transition">Términos y condiciones</a>
-              <a href="#" className="hover:text-white transition">Política de privacidad</a>
-              <a href="#" className="hover:text-white transition">Aviso legal</a>
+              <PietroButton  />
             </div>
           </div>
         </div>

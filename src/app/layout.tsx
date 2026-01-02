@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import Navbar from "@/components/Layout/Navbar";
 import Footer from "@/components/Layout/Footer";
+import { WhatsAppButton } from "@/components/Layout/WhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -70,8 +71,10 @@ export default function RootLayout({
         style={{ backgroundColor: '#101319' }}
       >
         <Navbar />
+
         <main className="flex-1">{children}</main>
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );

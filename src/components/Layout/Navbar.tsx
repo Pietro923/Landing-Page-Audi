@@ -96,8 +96,22 @@ export default function Navbar() {
           }
         `}
       >
+        {/* Logo a la izquierda con absolute */}
+        <div className="flex items-center absolute left-6 md:left-20">
+          <Link href="/" className="flex items-center">
+            <Image
+              src="/Logos/Audi.svg"
+              alt="Audi Argentina"
+              width={96}
+              height={24}
+              className="w-20 md:w-24 h-auto brightness-0 invert hover:scale-105 transition-transform duration-300"
+              priority
+            />
+          </Link>
+        </div>
+        
         {/* Mobile menu button */}
-        <div className="md:hidden">
+        <div className="md:hidden ml-auto">
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
               <Button
@@ -116,8 +130,8 @@ export default function Navbar() {
           </Sheet>
         </div>
 
-        {/* Left menu (desktop) */}
-        <div className="hidden md:flex gap-8 items-center">
+        {/* Desktop menu - CON ml-auto PARA EMPUJARLO A LA DERECHA */}
+        <div className="hidden md:flex gap-8 items-center ml-auto">
           <MegaMenuDropdown title="Modelos" scrolled={scrolled} />
           <NavLink href="/buscar-y-comprar" scrolled={scrolled}>
             Buscar y comprar
@@ -125,24 +139,6 @@ export default function Navbar() {
           <NavLink href="/servicios" scrolled={scrolled}>
             Servicios y Mantenimiento
           </NavLink>
-        </div>
-
-        {/* Logo central */}
-        <div className="flex justify-center items-center absolute left-1/2 transform -translate-x-1/2">
-          <Link href="/" className="flex items-center">
-            <Image
-              src="/Logos/Audi.svg"
-              alt="Audi Argentina"
-              width={96}
-              height={24}
-              className="w-20 md:w-24 h-auto brightness-0 invert hover:scale-105 transition-transform duration-300"
-              priority
-            />
-          </Link>
-        </div>
-
-        {/* Right menu (desktop) */}
-        <div className="hidden md:flex gap-8 items-center">
           <NavLink href="/mundo-audi" scrolled={scrolled}>
             Mundo Audi
           </NavLink>
@@ -153,9 +149,6 @@ export default function Navbar() {
             <Search size={20} />
           </button>
         </div>
-
-        {/* Espacio vacío para balancear en móvil */}
-        <div className="md:hidden w-6" />
       </nav>
     </>
   );

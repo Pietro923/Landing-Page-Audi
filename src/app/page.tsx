@@ -7,7 +7,7 @@ import { ArrowRight } from 'lucide-react';
 const tiles = [
   {
     title: 'Audi Lounge',
-    href: '/es/AudiLounge/',
+    href: '/AudiLounge/',
     image: '/Home/Conce.avif',
   },
   {
@@ -48,14 +48,14 @@ export default function HomePage() {
       <section className="py-20 px-6 text-white">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Audi A5</h2>
-            <h3 className="text-2xl md:text-3xl font-bold mb-6">Emociones intensas</h3>
+            <h2 className="text-4xl md:text-5xl  mb-6">Audi A5</h2>
+            <h3 className="text-2xl md:text-3xl  mb-6">Emociones intensas</h3>
             <p className="text-xl text-gray-300 mb-8">
               Cuando lo que sientes no se puede explicar con palabras es que estás al volante del nuevo Audi A5. Potente, deportivo y con la tecnología más avanzada, siente la emoción de conducir sin límites.
             </p>
             <Link
               href="/es/modelos/?byvehicletype=BEV"
-              className="bg-white text-black px-8 py-4 text-lg font-medium hover:bg-gray-200 transition rounded inline-block uppercase tracking-wider"
+              className="bg-white text-black px-8 py-4 text-lg  hover:bg-gray-200 transition rounded inline-block uppercase tracking-wider"
             >
               Sedan
             </Link>
@@ -90,8 +90,8 @@ export default function HomePage() {
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold mb-3">{tile.title}</h3>
-                  <span className="inline-flex items-center gap-2 text-sm font-medium group-hover:gap-3 transition-all">
+                  <h3 className="text-2xl  mb-3">{tile.title}</h3>
+                  <span className="inline-flex items-center gap-2 text-sm  group-hover:gap-3 transition-all">
                     Ver más
                     <ArrowRight size={16} />
                   </span>
@@ -117,17 +117,17 @@ export default function HomePage() {
         <div className="absolute inset-0 bg-black/30" />
         
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-6">
-          <h2 className="text-5xl md:text-7xl font-bold mb-8">Audi A3</h2>
+          <h2 className="text-5xl md:text-7xl  mb-8">Audi A3</h2>
           <div className="flex gap-4">
             <Link
               href="/es/modelos/a3/sedan"
-              className="bg-white text-black px-8 py-4 text-lg font-medium hover:bg-gray-200 transition rounded uppercase tracking-wider"
+              className="bg-white text-black px-8 py-4 text-lg  hover:bg-gray-200 transition rounded uppercase tracking-wider"
             >
               Sedán
             </Link>
             <Link
               href="/es/modelos/a3/sportback"
-              className="border-2 border-white text-white px-8 py-4 text-lg font-medium hover:bg-white hover:text-black transition rounded uppercase tracking-wider"
+              className="border-2 border-white text-white px-8 py-4 text-lg  hover:bg-white hover:text-black transition rounded uppercase tracking-wider"
             >
               Sportback
             </Link>

@@ -119,7 +119,7 @@ export default function Home() {
 
                 <div className="relative z-10 h-full flex flex-col items-center justify-end pb-16 text-white px-6 mb-10">
                   <div className="text-center">
-                    <h1 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl font-bold mb-2 md:mb-4">
+                    <h1 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl  mb-2 md:mb-4">
                       {slide.title}
                     </h1>
                     <p className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl">
@@ -129,7 +129,7 @@ export default function Home() {
                       href={slide.link}
                       className="group mt-6 md:mt-8 inline-block"
                     >
-                      <div className="bg-white text-[#05141F] font-bold text-sm md:text-base py-3 px-8 md:py-4 md:px-10 hover:bg-[#37434C] hover:text-white transition-all duration-300">
+                      <div className="bg-white text-[#05141F]  text-sm md:text-base py-3 px-8 md:py-4 md:px-10 hover:bg-[#37434C] hover:text-white transition-all duration-300">
                         <span className="relative">
                           Conocer más
                           <span className="absolute left-0 -bottom-1 w-0 h-px bg-[#05141F] transition-all duration-300 group-hover:w-full group-hover:bg-white" />

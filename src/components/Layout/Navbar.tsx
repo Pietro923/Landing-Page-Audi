@@ -47,7 +47,7 @@ export default function Navbar() {
         >
           <MapPin size={14} className="mr-2 shrink-0" />
           <div>
-            <p className="font-medium">Tucumán Centro</p>
+            <p className="">Tucumán Centro</p>
             <p className="text-xs text-gray-400">Santiago del Estero 902</p>
           </div>
         </Link>
@@ -60,7 +60,7 @@ export default function Navbar() {
         >
           <MapPin size={14} className="mr-2 shrink-0" />
           <div>
-            <p className="font-medium">Tucumán Yerba Buena</p>
+            <p className="">Tucumán Yerba Buena</p>
             <p className="text-xs text-gray-400">Av. Aconquija 1090</p>
           </div>
         </Link>
@@ -73,7 +73,7 @@ export default function Navbar() {
         >
           <MapPin size={14} className="mr-2 shrink-0" />
           <div>
-            <p className="font-medium">Salta</p>
+            <p className="">Salta</p>
             <p className="text-xs text-gray-400">Av. Belgrano 1050</p>
           </div>
         </Link>
@@ -87,7 +87,7 @@ export default function Navbar() {
         className={`
           fixed left-0 w-full z-50
           flex justify-between items-center gap-4
-          text-sm font-medium lg:px-20 px-6 py-4
+          text-sm  lg:px-20 px-6 py-4
           transition-all duration-300 ease-in-out
           ${
             scrolled
@@ -133,17 +133,17 @@ export default function Navbar() {
         {/* Desktop menu - CON ml-auto PARA EMPUJARLO A LA DERECHA */}
         <div className="hidden md:flex gap-8 items-center ml-auto">
           <MegaMenuDropdown title="Modelos" scrolled={scrolled} />
-          <NavLink href="/buscar-y-comprar" scrolled={scrolled}>
-            Buscar y comprar
+          <NavLink href="/nosotros" scrolled={scrolled}>
+            Nosotros
           </NavLink>
-          <NavLink href="/servicios" scrolled={scrolled}>
-            Servicios y Mantenimiento
+          <NavLink href="/post-venta" scrolled={scrolled}>
+            Post Venta
           </NavLink>
-          <NavLink href="/mundo-audi" scrolled={scrolled}>
-            Mundo Audi
+          <NavLink href="/contacto" scrolled={scrolled}>
+            Contacto
           </NavLink>
-          <NavLink href="/innovacion" scrolled={scrolled}>
-            Innovación
+          <NavLink href="/denuncias" scrolled={scrolled}>
+            Denuncias
           </NavLink>
           <button className="p-2 hover:bg-white/10 rounded-full transition-colors duration-200">
             <Search size={20} />
@@ -276,7 +276,7 @@ function MegaMenuDropdown({ title, scrolled }: { title: string; scrolled: boolea
                 <div className="hidden md:flex justify-start gap-12 pb-8 border-b border-white/20">
                   <button
                     onClick={() => setSelectedCategory("all")}
-                    className={`text-sm font-medium pb-3 border-b-2 ${
+                    className={`text-sm  pb-3 border-b-2 ${
                       selectedCategory === "all"
                         ? "border-white text-white"
                         : "border-transparent text-gray-400 hover:text-white"
@@ -288,7 +288,7 @@ function MegaMenuDropdown({ title, scrolled }: { title: string; scrolled: boolea
                     <button
                       key={category.name}
                       onClick={() => setSelectedCategory(category.name)}
-                      className={`text-sm font-medium pb-3 border-b-2 ${
+                      className={`text-sm  pb-3 border-b-2 ${
                         selectedCategory === category.name
                           ? "border-white text-white"
                           : "border-transparent text-gray-400 hover:text-white"
@@ -314,7 +314,7 @@ function MegaMenuDropdown({ title, scrolled }: { title: string; scrolled: boolea
                             className="object-contain p-6"
                           />
                         </div>
-                        <h3 className="text-2xl font-bold mb-2">{model.name}</h3>
+                        <h3 className="text-2xl  mb-2">{model.name}</h3>
                         <p className="text-sm text-gray-400 mb-6">
                           {model.count} {model.count === 1 ? "versión" : "versiones"} disponible{model.count > 1 ? "s" : ""}
                         </p>
@@ -325,7 +325,7 @@ function MegaMenuDropdown({ title, scrolled }: { title: string; scrolled: boolea
                         rel="noreferrer"
                         onClick={handleLinkClick}
                       >
-                        <button className="w-full py-3.5 border border-white/30 rounded-full font-semibold text-white hover:bg-white hover:text-[#101319]">
+                        <button className="w-full py-3.5 border border-white/30 rounded-full  text-white hover:bg-white hover:text-[#101319]">
                           Consultar por WhatsApp
                         </button>
                       </Link>
@@ -340,7 +340,7 @@ function MegaMenuDropdown({ title, scrolled }: { title: string; scrolled: boolea
                 <Link
                   href="/modelos"
                   onClick={handleLinkClick}
-                  className="inline-flex items-center text-lg font-bold hover:text-gray-300"
+                  className="inline-flex items-center text-lg  hover:text-gray-300"
                 >
                   Explorar todos los modelos
                   <svg className="ml-3 w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -360,10 +360,10 @@ function MegaMenuDropdown({ title, scrolled }: { title: string; scrolled: boolea
 function MobileMenu({ close }: { close: () => void }) {
   const menuItems = [
     { title: "Modelos", href: "/modelos" },
-    { title: "Buscar y comprar", href: "/buscar-y-comprar" },
-    { title: "Servicios y Mantenimiento", href: "/servicios" },
-    { title: "Mundo Audi", href: "/mundo-audi" },
-    { title: "Innovación", href: "/innovacion" },
+    { title: "Nosotros", href: "/nosotros" },
+    { title: "Post Venta", href: "/post-venta" },
+    { title: "Contacto", href: "/contacto" },
+    { title: "Denuncias", href: "/denuncias" },
   ];
 
   return (
@@ -388,7 +388,7 @@ function MobileMenu({ close }: { close: () => void }) {
             <Link
               href={item.href}
               onClick={close}
-              className="block px-6 py-5 text-lg font-medium hover:bg-white/5 transition-colors duration-200"
+              className="block px-6 py-5 text-lg  hover:bg-white/5 transition-colors duration-200"
             >
               {item.title}
             </Link>
@@ -400,7 +400,7 @@ function MobileMenu({ close }: { close: () => void }) {
           <Link
             href="/contacto"
             onClick={close}
-            className="flex items-center justify-center gap-3 text-white font-semibold mb-4"
+            className="flex items-center justify-center gap-3 text-white  mb-4"
           >
             <MapPin size={20} />
             CONTÁCTENOS

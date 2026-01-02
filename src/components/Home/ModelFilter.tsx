@@ -34,7 +34,7 @@ export default function ModelFilter() {
     <section className="py-20 px-6 max-w-screen-2xl mx-auto">
       {/* Header */}
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <h2 className="text-4xl md:text-5xl  text-white mb-4">
           Descubrí tu Audi
         </h2>
         <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -62,7 +62,7 @@ export default function ModelFilter() {
             key={filter}
             onClick={() => toggleFilter(filter)}
             className={`
-              px-6 py-3 rounded-full font-medium
+              px-6 py-3 rounded-full 
               ${
                 activeFilters.includes(filter)
                   ? 'bg-white text-[#101319] shadow-lg'
@@ -78,7 +78,7 @@ export default function ModelFilter() {
       {/* Header con contador */}
       <div className="flex justify-between items-center mb-10">
         <div>
-          <p className="text-2xl font-bold text-white">
+          <p className="text-2xl  text-white">
             {models.length} <span className="text-gray-400 font-normal">Modelos disponibles</span>
           </p>
           {activeFilters.length > 0 && (
@@ -115,7 +115,7 @@ export default function ModelFilter() {
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/30">
               {/* Nombre */}
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-3xl font-bold text-white">Audi {model.name}</h3>
+                <h3 className="text-3xl  text-white">Audi {model.name}</h3>
                 <ChevronDown className="text-white" size={24} />
               </div>
 
@@ -147,13 +147,13 @@ export default function ModelFilter() {
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <Link
           href="/modelos"
-          className="w-full sm:w-auto px-8 py-4 bg-white text-[#101319] rounded-full font-semibold hover:bg-gray-200 text-center"
+          className="w-full sm:w-auto px-8 py-4 bg-white text-[#101319] rounded-full  hover:bg-gray-200 text-center"
         >
           Explorar todos los modelos
         </Link>
         <Link
           href="/modelos/comparar"
-          className="w-full sm:w-auto px-8 py-4 bg-white/10 border border-white/30 text-white rounded-full font-semibold hover:bg-white/20 text-center"
+          className="w-full sm:w-auto px-8 py-4 bg-white/10 border border-white/30 text-white rounded-full  hover:bg-white/20 text-center"
         >
           Comparar modelos
         </Link>

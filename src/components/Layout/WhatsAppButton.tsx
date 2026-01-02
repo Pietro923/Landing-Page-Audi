@@ -75,7 +75,7 @@ export function WhatsAppButton() {
       >
         <div className="p-4 bg-linear-to-r from-green-500 to-green-600 text-white rounded-t-xl">
           <h3 className="font-bold text-lg">
-            Hola, somos <span className="italic">CP Motors</span>
+            Hola, somos <span className="italic">UB Motors</span>
           </h3>
           <p className="text-green-100 text-sm mt-1">
             ¿En qué podemos ayudarte hoy?

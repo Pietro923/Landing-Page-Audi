@@ -15,6 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+
 export const metadata: Metadata = {
   title: "UB Motors - Distribuidor de Audi | Sitio Oficial",
   description: "Descubrí la gama completa de vehículos Audi en Argentina. Modelos sedan, sportback, SUV y e-tron. Tecnología, diseño y rendimiento premium.",

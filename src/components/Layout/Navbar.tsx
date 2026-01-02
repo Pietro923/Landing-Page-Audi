@@ -139,6 +139,9 @@ export default function Navbar() {
           <NavLink href="/post-venta" scrolled={scrolled}>
             Post Venta
           </NavLink>
+          <NavLink href="/Grupo-Pueble" scrolled={scrolled}>
+           Grupo Pueble
+          </NavLink>
           <NavLink href="/contacto" scrolled={scrolled}>
             Contacto
           </NavLink>
@@ -362,6 +365,7 @@ function MobileMenu({ close }: { close: () => void }) {
     { title: "Modelos", href: "/modelos" },
     { title: "Nosotros", href: "/nosotros" },
     { title: "Post Venta", href: "/post-venta" },
+    { title: "Grupo Pueble", href: "/Grupo-Pueble" },
     { title: "Contacto", href: "/contacto" },
     { title: "Denuncias", href: "/denuncias" },
   ];

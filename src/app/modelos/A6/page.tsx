@@ -1,67 +1,32 @@
+// A6 INDEX PAGE
 'use client';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
-const versionesA3 = [
+const versionesA6 = [
   {
-    id: 'sedan',
-    name: 'A3 Sedán',
-    image: '/Vehiculos/A3-sedan.webp',
-    description: 'Elegancia deportiva de cuatro puertas',
-    motor: '35 TFSI',
-    potencia: '150 CV',
-    link: '/modelos/A3/sedan'
-  },
-  {
-    id: 'sportback',
-    name: 'A3 Sportback',
-    image: '/Vehiculos/A3-sportback.webp',
-    description: 'Versatilidad y estilo en cinco puertas',
-    motor: '35 TFSI',
-    potencia: '150 CV',
-    link: '/modelos/A3/sportback'
-  },
-  {
-    id: 'S3 Sportback',
-    name: 'S3 Sportback',
-    image: '/Vehiculos/A3-sedan-sline.webp',
-    description: 'Deportividad premium con acabado S line',
-    motor: '35 TFSI',
-    potencia: '150 CV',
-    link: '/modelos/A3/sedan-35-tfsi-s-line'
-  },
-  {
-    id: 'S3 Sedán',
-    name: 'S3 Sedán',
-    image: '/Vehiculos/A3-sportback-sline.webp',
-    description: 'Estilo S line en formato Sportback',
-    motor: '35 TFSI',
-    potencia: '150 CV',
-    link: '/modelos/A3/sportback-35-tfsi-s-line'
-  },
-  {
-    id: 'RS 3 Sportback',
-    name: 'RS 3 Sportback',
-    image: '/Vehiculos/S3-sedan.webp',
-    description: 'Performance quattro de alto rendimiento',
+    id: 'a6-sedan',
+    name: 'A6 Sedán',
+    image: '/Vehiculos/A6-sedan.webp',
+    description: 'Elegancia ejecutiva con tecnología mild hybrid',
     motor: '2.0 TFSI',
-    potencia: '310 CV',
-    link: '/modelos/A3/s3-sedan'
+    potencia: '245 CV',
+    link: '/modelos/A6/sedan'
   },
   {
-    id: 'RS 3 Sedán',
-    name: 'RS 3 Sedán',
-    image: '/Vehiculos/S3-sportback.webp',
-    description: 'Deportividad extrema en formato Sportback',
-    motor: '2.0 TFSI',
-    potencia: '310 CV',
-    link: '/modelos/A3/s3-sportback'
+    id: 'a6-allroad',
+    name: 'A6 allroad quattro',
+    image: '/Vehiculos/A6-allroad.webp',
+    description: 'Versatilidad todoterreno con lujo premium',
+    motor: '3.0 TDI',
+    potencia: '286 CV',
+    link: '/modelos/A6/allroad'
   },
 ];
 
-export default function A3IndexPage() {
+export default function A6IndexPage() {
   return (
     <div className="min-h-screen bg-[#0a0d11] text-white">
       <div className="max-w-screen-2xl mx-auto px-6 py-12">
@@ -72,21 +37,21 @@ export default function A3IndexPage() {
             <ChevronRight size={16} className="rotate-180" />
             Volver a todos los modelos
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Audi A3</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Audi A6</h1>
           <p className="text-gray-400 text-lg">Elegí la versión que mejor se adapte a tu estilo</p>
         </div>
 
         {/* Contador */}
         <div className="mb-8">
           <p className="text-xl">
-            <span className="font-bold">{versionesA3.length}</span>
+            <span className="font-bold">{versionesA6.length}</span>
             <span className="text-gray-400"> versiones disponibles</span>
           </p>
         </div>
 
         {/* Grid de versiones */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {versionesA3.map((version) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16 max-w-4xl mx-auto">
+          {versionesA6.map((version) => (
             <Link
               key={version.id}
               href={version.link}

@@ -4,64 +4,37 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
-const versionesA3 = [
+const versionesQ5 = [
   {
-    id: 'sedan',
-    name: 'A3 Sedán',
-    image: '/Vehiculos/A3-sedan.webp',
-    description: 'Elegancia deportiva de cuatro puertas',
-    motor: '35 TFSI',
-    potencia: '150 CV',
-    link: '/modelos/A3/sedan'
+    id: 'q5',
+    name: 'Q5 Sportback',
+    image: '/Vehiculos/Q5.webp',
+    description: 'SUV premium con tecnología quattro',
+    motor: '2.0 TFSI',
+    potencia: '204 CV',
+    link: '/modelos/Q5/q5-40-tfsi'
   },
   {
-    id: 'sportback',
-    name: 'A3 Sportback',
-    image: '/Vehiculos/A3-sportback.webp',
-    description: 'Versatilidad y estilo en cinco puertas',
-    motor: '35 TFSI',
-    potencia: '150 CV',
-    link: '/modelos/A3/sportback'
-  },
-  {
-    id: 'S3 Sportback',
-    name: 'S3 Sportback',
-    image: '/Vehiculos/A3-sedan-sline.webp',
+    id: 'q5-s-line',
+    name: 'Q5',
+    image: '/Vehiculos/Q5-sline.webp',
     description: 'Deportividad premium con acabado S line',
-    motor: '35 TFSI',
-    potencia: '150 CV',
-    link: '/modelos/A3/sedan-35-tfsi-s-line'
-  },
-  {
-    id: 'S3 Sedán',
-    name: 'S3 Sedán',
-    image: '/Vehiculos/A3-sportback-sline.webp',
-    description: 'Estilo S line en formato Sportback',
-    motor: '35 TFSI',
-    potencia: '150 CV',
-    link: '/modelos/A3/sportback-35-tfsi-s-line'
-  },
-  {
-    id: 'RS 3 Sportback',
-    name: 'RS 3 Sportback',
-    image: '/Vehiculos/S3-sedan.webp',
-    description: 'Performance quattro de alto rendimiento',
     motor: '2.0 TFSI',
-    potencia: '310 CV',
-    link: '/modelos/A3/s3-sedan'
+    potencia: '204 CV',
+    link: '/modelos/Q5/q5-40-tfsi-s-line'
   },
   {
-    id: 'RS 3 Sedán',
-    name: 'RS 3 Sedán',
-    image: '/Vehiculos/S3-sportback.webp',
-    description: 'Deportividad extrema en formato Sportback',
-    motor: '2.0 TFSI',
-    potencia: '310 CV',
-    link: '/modelos/A3/s3-sportback'
+    id: 'sq5',
+    name: 'SQ5 Sportback',
+    image: '/Vehiculos/SQ5.webp',
+    description: 'Máximo rendimiento y deportividad',
+    motor: '3.0 TFSI',
+    potencia: '354 CV',
+    link: '/modelos/Q5/sq5'
   },
 ];
 
-export default function A3IndexPage() {
+export default function Q5IndexPage() {
   return (
     <div className="min-h-screen bg-[#0a0d11] text-white">
       <div className="max-w-screen-2xl mx-auto px-6 py-12">
@@ -72,21 +45,21 @@ export default function A3IndexPage() {
             <ChevronRight size={16} className="rotate-180" />
             Volver a todos los modelos
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Audi A3</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Audi Q5</h1>
           <p className="text-gray-400 text-lg">Elegí la versión que mejor se adapte a tu estilo</p>
         </div>
 
         {/* Contador */}
         <div className="mb-8">
           <p className="text-xl">
-            <span className="font-bold">{versionesA3.length}</span>
+            <span className="font-bold">{versionesQ5.length}</span>
             <span className="text-gray-400"> versiones disponibles</span>
           </p>
         </div>
 
         {/* Grid de versiones */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {versionesA3.map((version) => (
+          {versionesQ5.map((version) => (
             <Link
               key={version.id}
               href={version.link}

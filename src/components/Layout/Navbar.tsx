@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Menu, Search, MapPin, ChevronDown, X } from "lucide-react";
+import { Menu, MapPin, ChevronDown, X } from "lucide-react";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 
@@ -148,9 +148,6 @@ export default function Navbar() {
           <NavLink href="/denuncias" scrolled={scrolled}>
             Denuncias
           </NavLink>
-          <button className="p-2 hover:bg-white/10 rounded-full transition-colors duration-200">
-            <Search size={20} />
-          </button>
         </div>
       </nav>
     </>

@@ -103,7 +103,7 @@ export default function PostVentaPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/70 to-black/50" />
         </div>
         
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-center">

@@ -60,7 +60,7 @@ export default function HomePage() {
               Sedán
             </Link>
           </div>
-          <div className="relative w-full h-[500px] md:h-[600px] overflow-hidden rounded-2xl">
+          <div className="relative w-full h-125 md:h-150 overflow-hidden rounded-2xl">
             <Image
               src="/Hero/A5.avif"
               alt="Audi A5"
@@ -170,7 +170,7 @@ export default function HomePage() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                   <h3 className="text-2xl md:text-3xl font-light mb-4">{tile.title}</h3>
                   <span className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider group-hover:gap-4 transition-all">

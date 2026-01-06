@@ -60,7 +60,7 @@ export default function GrupoPueblePage() {
       logo: "/GrupoPueble/logo/Indian_Motorcycle_logo.svg.png",
       imagen: "/GrupoPueble/vehiculo/Indian.jpg",
       descripcion: "Motocicletas Indian en Tucumán",
-      link: "https://www.instagram.com/indianmotors/",
+      link: "https://www.instagram.com/indian_motorcycle_tuc/",
     },
   ];
 
@@ -136,7 +136,7 @@ export default function GrupoPueblePage() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/50 to-transparent" />
                   
                   {/* Logo sobre la imagen */}
                   <div className="absolute bottom-4 left-4 bg-white rounded-lg p-3 shadow-lg">

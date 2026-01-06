@@ -58,7 +58,7 @@ export default function GrupoPueblePage() {
       id: "indian-motors",
       nombre: "Indian Motors",
       logo: "/GrupoPueble/logo/Indian_Motorcycle_logo.svg.png",
-      imagen: "/GrupoPueble/vehiculo/indian.jpg",
+      imagen: "/GrupoPueble/vehiculo/Indian.jpg",
       descripcion: "Motocicletas Indian en Tucumán",
       link: "https://www.instagram.com/indianmotors/",
     },

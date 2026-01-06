@@ -54,6 +54,14 @@ export default function GrupoPueblePage() {
       descripcion: "Equipamiento agrícola Acogra",
       link: "https://www.instagram.com/SemageGp/",
     },
+    {
+      id: "indian-motors",
+      nombre: "Indian Motors",
+      logo: "/GrupoPueble/logo/Indian_Motorcycle_logo.svg.png",
+      imagen: "/GrupoPueble/vehiculo/indian.jpg",
+      descripcion: "Motocicletas Indian en Tucumán",
+      link: "https://www.instagram.com/indianmotors/",
+    },
   ];
 
   return (
@@ -71,7 +79,7 @@ export default function GrupoPueblePage() {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/70 to-black/50" />
         <div className="relative z-10 max-w-screen-2xl mx-auto text-center text-white px-6 flex flex-col justify-center h-full">
           <div className="inline-block mb-6">
             <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">

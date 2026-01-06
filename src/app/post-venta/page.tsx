@@ -386,7 +386,7 @@ export default function PostVentaPage() {
             <div className="bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-[#BB0A30]/50 transition-all duration-300">
               <div className="relative h-48">
                 <Image
-                  src="/Concesionarios/centro/salon.jpg"
+                  src="/Concesionarios/centro/salon.JPG"
                   alt="Taller Tucumán Centro"
                   fill
                   className="object-cover"

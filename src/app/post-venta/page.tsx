@@ -352,7 +352,7 @@ export default function PostVentaPage() {
 
             <div className="relative aspect-video rounded-2xl overflow-hidden order-1 lg:order-2">
               <Image
-                src="/concesionarios/salta/taller.jpg"
+                src="/Concesionarios/salta/taller.jpg"
                 alt="Garantía Audi"
                 fill
                 className="object-cover"
@@ -416,7 +416,7 @@ export default function PostVentaPage() {
             <div className="bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-[#BB0A30]/50 transition-all duration-300">
               <div className="relative h-48">
                 <Image
-                  src="/concesionarios/salta/taller.jpg"
+                  src="/Concesionarios/salta/taller.jpg"
                   alt="Taller Salta"
                   fill
                   className="object-cover"

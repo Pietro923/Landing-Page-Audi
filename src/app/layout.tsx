@@ -17,21 +17,21 @@ const geistMono = Geist_Mono({
 
 
 export const metadata: Metadata = {
-  title: "UB Motors - Distribuidor de Audi | Sitio Oficial",
-  description: "Descubrí la gama completa de vehículos Audi en Argentina. Modelos sedan, sportback, SUV y e-tron. Tecnología, diseño y rendimiento premium.",
-  keywords: "Audi, Audi Argentina, autos premium, SUV, sedan, sportback, e-tron, quattro, vehículos eléctricos",
-  authors: [{ name: "Audi Argentina" }],
+  title: "UB Motors - Distribuidor Oficial Audi | Tucumán y Salta",
+  description: "UB Motors es el distribuidor oficial de Audi en el Norte Argentino. Concesionarios en Tucumán (2 sucursales) y Salta. También Ducati en Salta. Descubrí la gama completa de vehículos Audi: A1, A3, A5, A6, Q2, Q3, Q5, Q7, Q8.",
+  keywords: "UB Motors, Audi Tucumán, Audi Salta, concesionario Audi, distribuidor Audi, Audi Argentina, autos premium, SUV, sedan, sportback, Ducati Salta, vehículos premium",
+  authors: [{ name: "UB Motors" }],
   openGraph: {
-    title: "Audi Argentina | Sitio Oficial",
-    description: "Descubrí la gama completa de vehículos Audi en Argentina. Tecnología, diseño y rendimiento premium.",
-    url: "https://www.audi.com.ar",
-    siteName: "Audi Argentina",
+    title: "UB Motors - Distribuidor Oficial Audi | Tucumán y Salta",
+    description: "Distribuidor oficial de Audi en el Norte Argentino. Concesionarios en Tucumán (2 sucursales) y Salta. También Ducati en Salta.",
+    url: "https://www.ubmotors.com.ar",
+    siteName: "UB Motors",
     images: [
       {
-        url: "/og-image.jpg", // Agregá esta imagen en /public
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Audi Argentina",
+        alt: "UB Motors - Distribuidor Oficial Audi",
       },
     ],
     locale: "es_AR",
@@ -39,10 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Audi Argentina | Sitio Oficial",
-    description: "Descubrí la gama completa de vehículos Audi en Argentina.",
+    title: "UB Motors - Distribuidor Oficial Audi | Tucumán y Salta",
+    description: "Distribuidor oficial de Audi en el Norte Argentino. Concesionarios en Tucumán y Salta.",
     images: ["/og-image.jpg"],
-    creator: "@AudiArg",
   },
   robots: {
     index: true,
@@ -54,9 +53,6 @@ export const metadata: Metadata = {
       "max-image-preview": "large",
       "max-snippet": -1,
     },
-  },
-  verification: {
-    google: "tu-codigo-google-search-console", // Agregá el código de Google Search Console
   },
 };
 

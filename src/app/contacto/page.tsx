@@ -107,7 +107,7 @@ export default function ContactoPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-black via-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
         </div>
         
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-center">
@@ -119,10 +119,10 @@ export default function ContactoPage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2" />
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight tracking-tight">
               Estamos para ayudarte
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300">
+            <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
               Contactanos por cualquier consulta. Nuestro equipo te responderá a la brevedad.
             </p>
           </div>
@@ -137,10 +137,16 @@ export default function ContactoPage() {
             {/* Información de contacto */}
             <div>
               <div className="mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                <div className="inline-block mb-6">
+                  <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                    Contacto
+                  </span>
+                  <div className="h-px w-20 bg-white mt-2" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
                   Información de Contacto
                 </h2>
-                <p className="text-gray-400 text-lg">
+                <p className="text-gray-300 text-lg md:text-xl font-light leading-relaxed">
                   Visitanos, llamanos o escribinos. Estamos aquí para ayudarte 
                   a encontrar tu próximo Audi o resolver cualquier consulta.
                 </p>
@@ -160,7 +166,7 @@ export default function ContactoPage() {
                           <Icon className="w-6 h-6 text-[#BB0A30]" />
                         </div>
                         <div>
-                          <h3 className="font-semibold text-lg mb-2">{info.title}</h3>
+                          <h3 className="font-light text-xl mb-2">{info.title}</h3>
                           {info.items.map((item, idx) => (
                             <p key={idx} className="text-gray-400">
                               {item}
@@ -198,10 +204,16 @@ export default function ContactoPage() {
 
             {/* Formulario */}
             <div>
-              <div className="bg-linear-to-br from-[#101319] to-[#1a1f2b] p-8 md:p-10 rounded-2xl border border-white/10 sticky top-24">
+              <div className="bg-gradient-to-br from-[#101319] to-[#1a1f2b] p-8 md:p-10 rounded-2xl border border-white/10 sticky top-24">
                 <div className="mb-8">
-                  <h2 className="text-3xl font-bold mb-3">Completá el formulario</h2>
-                  <p className="text-gray-400">
+                  <div className="inline-block mb-4">
+                    <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                      Formulario
+                    </span>
+                    <div className="h-px w-20 bg-white mt-2" />
+                  </div>
+                  <h2 className="text-3xl md:text-4xl font-light mb-3 tracking-tight">Completá el formulario</h2>
+                  <p className="text-gray-400 font-light">
                     Envianos tus datos y en breve nos comunicaremos con vos.
                   </p>
                 </div>
@@ -364,17 +376,23 @@ export default function ContactoPage() {
       <section className="py-20 px-6 bg-[#0a0d11]">
         <div className="max-w-screen-2xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+            <div className="inline-block mb-6">
+              <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                Ubicación
+              </span>
+              <div className="h-px w-20 bg-white mt-2 mx-auto" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-light mb-4 tracking-tight">
               Visitanos
             </h2>
-            <p className="text-gray-400 text-lg">
+            <p className="text-gray-400 text-lg font-light">
               Te esperamos en nuestro showroom en el centro de Tucumán
             </p>
           </div>
 
           <div className="w-full h-125 rounded-2xl overflow-hidden shadow-2xl">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.1234567890!2d-65.2061!3d-26.8241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjbCsDQ5JzI2LjgiUyA2NcKwMTInMjIuMCJX!5e0!3m2!1ses-419!2sar!4v1234567890123!5m2!1ses-419!2sar"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.5315941683984!2d-65.2119034247788!3d-26.82303937670074!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c15fb405353%3A0xad7b5aca873ac31!2sUB%20Motors!5e0!3m2!1ses-419!2sar!4v1767719930491!5m2!1ses-419!2sar"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -391,10 +409,10 @@ export default function ContactoPage() {
       <section className="py-20 px-6 bg-[#101319]">
         <div className="max-w-screen-2xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <h2 className="text-3xl md:text-4xl font-light mb-4 tracking-tight">
               Otras Ubicaciones
             </h2>
-            <p className="text-gray-400">
+            <p className="text-gray-400 font-light">
               También podés visitarnos en nuestras otras sucursales
             </p>
           </div>
@@ -402,7 +420,7 @@ export default function ContactoPage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {/* Yerba Buena */}
             <div className="bg-white/5 p-8 rounded-xl border border-white/10 hover:border-[#BB0A30]/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-4">Audi Yerba Buena</h3>
+              <h3 className="text-2xl font-light mb-4">Audi Yerba Buena</h3>
               <div className="space-y-3 text-gray-400">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-[#BB0A30] shrink-0 mt-1" />
@@ -421,7 +439,7 @@ export default function ContactoPage() {
 
             {/* Salta */}
             <div className="bg-white/5 p-8 rounded-xl border border-white/10 hover:border-[#BB0A30]/50 transition-all duration-300">
-              <h3 className="text-2xl font-bold mb-4">Audi Salta</h3>
+              <h3 className="text-2xl font-light mb-4">Audi Salta</h3>
               <div className="space-y-3 text-gray-400">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-5 h-5 text-[#BB0A30] shrink-0 mt-1" />
@@ -455,10 +473,10 @@ export default function ContactoPage() {
                   className="brightness-0 invert"
                 />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <h2 className="text-3xl md:text-4xl font-light mb-4 tracking-tight">
                 ¿Preferís WhatsApp?
               </h2>
-              <p className="text-xl text-white/90 mb-8">
+              <p className="text-xl text-white/90 mb-8 font-light">
                 Chateá directamente con nuestro equipo para una respuesta inmediata
               </p>
               <Button 

@@ -49,16 +49,16 @@ export default function Home() {
 
   const slides = [
     {
-      title: "Audi Q5",
-      subtitle: "Inspiración sin límites",
-      link: "",
+      title: "Nuevo Audi Q5",
+      subtitle: "Incomparable",
+      link: "/modelos/Q5",
       imageDesktop: "/Hero/Q5-desktop.jpg",
       imageMobile: "/Hero/Q5-mobile.jpg",
     },
     {
       title: "Audi A5",
-      subtitle: "Velocidad y calidad",
-      link: "",
+      subtitle: "Emociones intensas",
+      link: "/modelos/A5",
       imageDesktop: "/Hero/A5.jpg",
       imageMobile: "/Hero/A5.jpg",
     },
@@ -102,7 +102,7 @@ export default function Home() {
                     priority={index === 0}
                     sizes="100vw"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
                 </div>
 
                 <div className="absolute inset-0 block md:hidden">
@@ -114,28 +114,33 @@ export default function Home() {
                     priority={index === 0}
                     sizes="100vw"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
                 </div>
 
-                <div className="relative z-10 h-full flex flex-col items-center justify-end pb-16 text-white px-6 mb-10">
-                  <div className="text-center">
-                    <h1 className="text-4xl md:text-5xl xl:text-6xl 2xl:text-7xl  mb-2 md:mb-4">
+                <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-6">
+                  <div className="text-center max-w-4xl">
+                    <h1 className="text-5xl md:text-6xl xl:text-7xl 2xl:text-8xl font-light mb-4 md:mb-6 tracking-tight">
                       {slide.title}
                     </h1>
-                    <p className="text-lg md:text-xl xl:text-2xl 2xl:text-3xl">
+                    <p className="text-xl md:text-2xl xl:text-3xl 2xl:text-4xl font-light text-gray-200 mb-8 md:mb-12">
                       {slide.subtitle}
                     </p>
-                    <Link
-                      href={slide.link}
-                      className="group mt-6 md:mt-8 inline-block"
-                    >
-                      <div className="bg-white text-[#05141F]  text-sm md:text-base py-3 px-8 md:py-4 md:px-10 hover:bg-[#37434C] hover:text-white transition-all duration-300">
-                        <span className="relative">
-                          Conocer más
-                          <span className="absolute left-0 -bottom-1 w-0 h-px bg-[#05141F] transition-all duration-300 group-hover:w-full group-hover:bg-white" />
-                        </span>
-                      </div>
-                    </Link>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                      <Link
+                        href={slide.link}
+                        className="group inline-flex items-center"
+                      >
+                        <div className="bg-white text-[#05141F] font-medium text-sm md:text-base py-3.5 px-10 md:py-4 md:px-12 hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider">
+                          Descubrí todos los modelos {slide.title}
+                        </div>
+                      </Link>
+                      <Link
+                        href="/modelos"
+                        className="group inline-flex items-center border-2 border-white text-white font-medium text-sm md:text-base py-3.5 px-10 md:py-4 md:px-12 hover:bg-white hover:text-[#05141F] transition-all duration-300 uppercase tracking-wider"
+                      >
+                        Explorar modelos
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

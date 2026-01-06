@@ -73,7 +73,7 @@ export default function TrabajaConNosotrosPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-black via-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
         </div>
         
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-center">
@@ -85,10 +85,10 @@ export default function TrabajaConNosotrosPage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2" />
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight tracking-tight">
               Trabajá con Nosotros
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300">
+            <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
               Sumate al equipo líder en experiencia Audi del Norte Argentino
             </p>
           </div>
@@ -100,14 +100,20 @@ export default function TrabajaConNosotrosPage() {
         <div className="max-w-5xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
             <div>
-              <h2 className="text-3xl font-bold mb-6">¿Por qué UB Motors?</h2>
+              <div className="inline-block mb-6">
+                <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                  Sobre nosotros
+                </span>
+                <div className="h-px w-20 bg-white mt-2" />
+              </div>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">¿Por qué UB Motors?</h2>
               <div className="space-y-4 text-gray-300">
                 <p>Formá parte de un equipo apasionado por la excelencia automotriz.</p>
                 <p>Ofrecemos un ambiente de trabajo profesional, capacitación continua y oportunidades de crecimiento.</p>
               </div>
             </div>
             <div className="bg-white/5 p-8 rounded-xl border border-white/10">
-              <h3 className="text-xl font-bold mb-4">Beneficios</h3>
+              <h3 className="text-xl font-light mb-4">Beneficios</h3>
               <ul className="space-y-3 text-gray-300">
                 <li>✓ Capacitación oficial Audi</li>
                 <li>✓ Ambiente de trabajo premium</li>
@@ -124,7 +130,13 @@ export default function TrabajaConNosotrosPage() {
                 <Briefcase className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h2 className="text-3xl font-bold">Completá tu postulación</h2>
+                <div className="inline-block mb-4">
+                  <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                    Formulario
+                  </span>
+                  <div className="h-px w-20 bg-white mt-2" />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-light tracking-tight">Completá tu postulación</h2>
                 <p className="text-gray-400">Envianos tus datos y CV</p>
               </div>
             </div>

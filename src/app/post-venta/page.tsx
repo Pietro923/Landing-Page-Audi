@@ -103,7 +103,7 @@ export default function PostVentaPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-black via-black/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
         </div>
         
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-center">
@@ -115,10 +115,10 @@ export default function PostVentaPage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2" />
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight tracking-tight">
               Servicio Excepcional para tu Audi
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed font-light">
               En UB Motors estamos capacitados para brindarte el mejor servicio. 
               Mantenimiento, repuestos originales y atención personalizada para que 
               tu auto esté siempre listo.
@@ -147,7 +147,7 @@ export default function PostVentaPage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2 mx-auto" />
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
               Todo lo que necesitás en un solo lugar
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
@@ -171,7 +171,7 @@ export default function PostVentaPage() {
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     
-                    <h3 className="text-2xl font-bold mb-4">{servicio.title}</h3>
+                    <h3 className="text-2xl font-light mb-4">{servicio.title}</h3>
                     <p className="text-gray-400 mb-6 leading-relaxed">
                       {servicio.description}
                     </p>
@@ -203,7 +203,7 @@ export default function PostVentaPage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2 mx-auto" />
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
               Excelencia en cada detalle
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
@@ -223,7 +223,7 @@ export default function PostVentaPage() {
                     <Icon className="w-6 h-6 text-[#BB0A30]" />
                   </div>
                   
-                  <h3 className="text-lg font-bold mb-2">{beneficio.title}</h3>
+                  <h3 className="text-lg font-light mb-2">{beneficio.title}</h3>
                   <p className="text-gray-400 text-sm leading-relaxed">
                     {beneficio.description}
                   </p>
@@ -255,7 +255,7 @@ export default function PostVentaPage() {
                 <div className="h-px w-20 bg-[#BB0A30] mt-2" />
               </div>
               
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
                 Accesorios Originales Audi
               </h2>
               
@@ -311,7 +311,7 @@ export default function PostVentaPage() {
                 <div className="h-px w-20 bg-[#BB0A30] mt-2" />
               </div>
               
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
                 Garantía Audi
               </h2>
               
@@ -373,7 +373,7 @@ export default function PostVentaPage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2 mx-auto" />
             </div>
             
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
               Nuestros Talleres de Service
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
@@ -393,7 +393,7 @@ export default function PostVentaPage() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-3">Tucumán Centro</h3>
+                <h3 className="text-xl font-light mb-3">Tucumán Centro</h3>
                 <div className="space-y-2 mb-6">
                   <div className="flex items-start gap-2 text-gray-400 text-sm">
                     <MapPin size={16} className="shrink-0 mt-1" />

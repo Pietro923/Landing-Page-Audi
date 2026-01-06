@@ -57,25 +57,29 @@ export default function GrupoPueblePage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#0a0d11] text-white">
       {/* Hero */}
-      <section className="relative h-screen overflow-hidden pt-24">
+      <section className="relative h-screen overflow-hidden">
         {/* Background */}
+        {/* RECOMENDACIÓN: Imagen del grupo de empresas, o vista aérea de los concesionarios, o logo del grupo destacado */}
         <Image
             src="/Concesionarios/salta/exterior.jpg"
-            alt="Exterior concesionario Salta"
+            alt="Grupo Pueble - Empresas del Norte Argentino"
             fill
             priority
             className="object-cover"
         />
 
-        {/* Overlay opcional (oscurecer) */}
-        <div className="absolute inset-0 bg-black/40" />
-        <div className="relative z-10 max-w-7xl mx-auto text-center text-white px-6">
-          <p className=" text-black text-sm md:text-base uppercase tracking-wider mb-4 mt-5">
-            Grupo Empresarial
-          </p>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
+        <div className="relative z-10 max-w-screen-2xl mx-auto text-center text-white px-6 flex flex-col justify-center h-full">
+          <div className="inline-block mb-6">
+            <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+              Grupo Empresarial
+            </span>
+            <div className="h-px w-20 bg-white mt-2 mx-auto" />
+          </div>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-light mb-6 tracking-tight">
             Grupo Pueble
           </h1>
           <div className="flex justify-center mb-8">
@@ -87,23 +91,34 @@ export default function GrupoPueblePage() {
               className="h-44 w-auto"
             />
           </div>
-          <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-gray-300 text-lg md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
             Un grupo empresarial con más de 20 años de trayectoria, líder en maquinaria agrícola, vehículos y motocicletas premium
           </p>
         </div>
       </section>
 
       {/* Empresas del Grupo */}
-      <section className="py-16 md:py-24 px-5 md:px-10 lg:px-20">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#101319] mb-12 text-center">
-            Nuestras Empresas
-          </h2>
+      <section className="py-24 px-6 bg-[#101319]">
+        <div className="max-w-screen-2xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block mb-6">
+              <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                Nuestras empresas
+              </span>
+              <div className="h-px w-20 bg-white mt-2 mx-auto" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
+              Nuestras Empresas
+            </h2>
+            <p className="text-gray-400 text-lg font-light max-w-2xl mx-auto">
+              Líderes en sus respectivos segmentos
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {empresas.map((empresa) => (
               <div
                 key={empresa.id}
-                className="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300"
+                className="group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 hover:border-white/30 transition-all duration-500"
               >
                 {/* Imagen */}
                 <div className="relative h-64 overflow-hidden bg-black">
@@ -113,7 +128,7 @@ export default function GrupoPueblePage() {
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
                   
                   {/* Logo sobre la imagen */}
                   <div className="absolute bottom-4 left-4 bg-white rounded-lg p-3 shadow-lg">
@@ -129,20 +144,20 @@ export default function GrupoPueblePage() {
 
                 {/* Contenido */}
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-[#101319] mb-3">
+                  <h3 className="text-2xl md:text-3xl font-light mb-3 text-white">
                     {empresa.nombre}
                   </h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-300 mb-6 font-light">
                     {empresa.descripcion}
                   </p>
                   <a
                     href={empresa.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-[#101319] font-bold hover:text-gray-600 transition-colors"
+                    className="inline-flex items-center gap-2 text-white font-medium hover:text-gray-300 transition-colors uppercase tracking-wider text-sm"
                   >
                     Ver más
-                    <ExternalLink className="w-4 h-4" />
+                    <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </div>
@@ -152,12 +167,18 @@ export default function GrupoPueblePage() {
       </section>
 
       {/* Historia */}
-      <section className="bg-gray-50 py-16 md:py-20 px-5 md:px-10 lg:px-20">
+      <section className="bg-[#0a0d11] py-24 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#101319] mb-6">
+          <div className="inline-block mb-6">
+            <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+              Historia
+            </span>
+            <div className="h-px w-20 bg-white mt-2 mx-auto" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
             Más de 20 Años de Trayectoria
           </h2>
-          <p className="text-gray-600 text-lg leading-relaxed">
+          <p className="text-gray-300 text-lg md:text-xl leading-relaxed font-light">
             Grupo Pueble es un grupo empresarial argentino con una sólida trayectoria en la comercialización 
             de maquinaria agrícola, vehículos y motocicletas premium. Con presencia en Tucumán y Salta, nos destacamos 
             por nuestro compromiso con la excelencia y la satisfacción de nuestros clientes.

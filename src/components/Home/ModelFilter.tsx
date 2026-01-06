@@ -33,11 +33,11 @@ export default function ModelFilter() {
   return (
     <section className="py-20 px-6 max-w-screen-2xl mx-auto">
       {/* Header */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl  text-white mb-4">
+      <div className="text-center mb-20">
+        <h2 className="text-5xl md:text-6xl font-light text-white mb-6 tracking-tight">
           Descubrí tu Audi
         </h2>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+        <p className="text-gray-300 text-xl md:text-2xl max-w-3xl mx-auto font-light">
           Explorá nuestra gama completa de modelos diseñados para cada estilo de vida
         </p>
       </div>
@@ -76,13 +76,13 @@ export default function ModelFilter() {
       </div>
 
       {/* Header con contador */}
-      <div className="flex justify-between items-center mb-10">
+      <div className="flex justify-between items-center mb-12">
         <div>
-          <p className="text-2xl  text-white">
-            {models.length} <span className="text-gray-400 font-normal">Modelos disponibles</span>
+          <p className="text-3xl md:text-4xl font-light text-white">
+            {models.length} <span className="text-gray-400 font-light">Modelos</span>
           </p>
           {activeFilters.length > 0 && (
-            <p className="text-sm text-gray-400 mt-1">
+            <p className="text-sm text-gray-400 mt-2 font-light">
               Filtros activos: {activeFilters.join(', ')}
             </p>
           )}
@@ -112,11 +112,11 @@ export default function ModelFilter() {
             href={`/modelos/${model.name.toLowerCase()}`}
             className="group"
           >
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 hover:border-white/30">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/30 transition-all duration-300 group">
               {/* Nombre */}
               <div className="flex items-center justify-between mb-6">
-                <h3 className="text-3xl  text-white">Audi {model.name}</h3>
-                <ChevronDown className="text-white" size={24} />
+                <h3 className="text-3xl md:text-4xl font-light text-white">Audi {model.name}</h3>
+                <ChevronDown className="text-white/60 group-hover:text-white group-hover:rotate-180 transition-all duration-300" size={24} />
               </div>
 
               {/* Imagen */}
@@ -147,13 +147,13 @@ export default function ModelFilter() {
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
         <Link
           href="/modelos"
-          className="w-full sm:w-auto px-8 py-4 bg-white text-[#101319] rounded-full  hover:bg-gray-200 text-center"
+          className="w-full sm:w-auto px-10 py-4 bg-white text-[#101319] rounded-full font-medium hover:bg-gray-100 text-center uppercase tracking-wider transition-all duration-300"
         >
           Explorar todos los modelos
         </Link>
         <Link
-          href="/modelos/comparar"
-          className="w-full sm:w-auto px-8 py-4 bg-white/10 border border-white/30 text-white rounded-full  hover:bg-white/20 text-center"
+          href="/modelos"
+          className="w-full sm:w-auto px-10 py-4 bg-white/10 border border-white/30 text-white rounded-full font-medium hover:bg-white/20 text-center uppercase tracking-wider transition-all duration-300"
         >
           Comparar modelos
         </Link>

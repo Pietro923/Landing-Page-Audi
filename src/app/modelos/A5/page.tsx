@@ -60,31 +60,37 @@ export default function A5Page() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#0a0d11] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
         </div>
         
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-end pb-20">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">A5 Sedán</h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+          <div className="inline-block mb-6">
+            <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+              Modelo
+            </span>
+            <div className="h-px w-20 bg-white mt-2" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-light mb-4 tracking-tight">A5 Sedán</h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl font-light">
             Emociones intensas
           </p>
           
           <div className="flex flex-wrap gap-4">
             <Link
               href="/configurador/a5"
-              className="px-8 py-4 bg-white text-[#101319] rounded-full font-semibold hover:bg-gray-200"
+              className="px-10 py-4 bg-white text-[#101319] rounded-full font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
             >
               Configurar
             </Link>
             <Link
               href="/stock?modelo=a5"
-              className="px-8 py-4 bg-white/10 border border-white/30 rounded-full font-semibold hover:bg-white/20"
+              className="px-10 py-4 bg-white/10 border border-white/30 rounded-full font-medium hover:bg-white/20 transition-all duration-300 uppercase tracking-wider"
             >
               Ver Stock
             </Link>
             <Link
               href="/contacto"
-              className="px-8 py-4 bg-white/10 border border-white/30 rounded-full font-semibold hover:bg-white/20"
+              className="px-10 py-4 bg-white/10 border border-white/30 rounded-full font-medium hover:bg-white/20 transition-all duration-300 uppercase tracking-wider"
             >
               Solicitar asesoramiento
             </Link>
@@ -95,7 +101,7 @@ export default function A5Page() {
       {/* Introducción */}
       <section className="py-20 px-6">
         <div className="max-w-screen-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
             Cuando lo que sientes no se puede explicar con palabras
           </h2>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
@@ -108,7 +114,7 @@ export default function A5Page() {
       {/* Galería de Imágenes */}
       <section className="py-20 px-6 max-w-screen-2xl mx-auto">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Dinamismo que sorprende</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-4 tracking-tight">Dinamismo que sorprende</h2>
           <p className="text-gray-400 text-lg">
             Con una fluidez de líneas perfectamente sincronizada, el nuevo diseño del Audi A5 
             es pura elegancia deportiva
@@ -164,7 +170,7 @@ export default function A5Page() {
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Deportividad elegante</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Deportividad elegante</h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Las proporciones del nuevo Audi A5 irradian una deportividad extraordinaria que 
                 se refuerza con el diseño de un nuevo portón trasero que se abre con la luneta 
@@ -201,7 +207,7 @@ export default function A5Page() {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Puro carácter</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Puro carácter</h2>
               <p className="text-gray-300 leading-relaxed">
                 El frontal del vehículo, con una gran anchura y profundidad visuales, ofrece una 
                 imagen especialmente deportiva que se realza con la parrilla Audi Singleframe con 
@@ -218,7 +224,7 @@ export default function A5Page() {
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Espacio para sorprenderse</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Espacio para sorprenderse</h2>
               <p className="text-gray-300 leading-relaxed">
                 El espacioso interior del Audi A5 es todo un espectáculo visual en el que elegancia 
                 y conectividad se unen en armonía para ofrecer un elevado nivel de confort.
@@ -239,7 +245,7 @@ export default function A5Page() {
       {/* Tecnología de seguridad */}
       <section className="py-20 px-6">
         <div className="max-w-screen-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
             Tecnología extra para tu seguridad
           </h2>
           <p className="text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
@@ -254,7 +260,7 @@ export default function A5Page() {
                 className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/30"
               >
                 <div className="text-white mb-6">{item.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
+                <h3 className="text-xl font-light mb-3">{item.title}</h3>
                 <p className="text-gray-400">{item.desc}</p>
               </div>
             ))}
@@ -267,7 +273,7 @@ export default function A5Page() {
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-4">Configuralo a tu manera</h3>
+              <h3 className="text-2xl font-light mb-4">Configuralo a tu manera</h3>
               <p className="text-gray-300 mb-6">
                 Dale tu propio estilo eligiendo cada detalle del A5 Sedán.
               </p>
@@ -305,7 +311,7 @@ export default function A5Page() {
               href="/modelos/a5/dimensiones"
               className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/30"
             >
-              <h3 className="text-2xl font-bold mb-4">Dimensiones</h3>
+              <h3 className="text-2xl font-light mb-4">Dimensiones</h3>
               <p className="text-gray-300 mb-6">Conocé las medidas exactas del A5 Sedán</p>
               <span className="inline-flex items-center gap-2 text-white">
                 Saber más
@@ -331,7 +337,7 @@ export default function A5Page() {
       {/* Modelos relacionados */}
       <section className="py-20 px-6 bg-white/5">
         <div className="max-w-screen-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+          <h2 className="text-4xl md:text-5xl font-light mb-12 text-center tracking-tight">
             Quizás también te interese…
           </h2>
           
@@ -352,7 +358,7 @@ export default function A5Page() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">Audi {model.name}</h3>
+                    <h3 className="text-xl font-light mb-2">Audi {model.name}</h3>
                     <span className="inline-flex items-center gap-2 text-gray-400 group-hover:text-white">
                       Ver modelo
                       <ChevronRight size={16} />

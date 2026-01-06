@@ -65,29 +65,35 @@ export default function ModelosPage() {
       <div className="max-w-screen-2xl mx-auto px-6 py-12">
         
         {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4 mt-16">Todos los modelos</h1>
-          <p className="text-gray-400 text-lg">Explorá nuestra gama completa de vehículos Audi</p>
+        <div className="mb-16 mt-20">
+          <div className="inline-block mb-6">
+            <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+              Gama completa
+            </span>
+            <div className="h-px w-20 bg-white mt-2" />
+          </div>
+          <h1 className="text-5xl md:text-6xl font-light mb-6 tracking-tight">Todos los modelos</h1>
+          <p className="text-gray-300 text-xl font-light">Explorá nuestra gama completa de vehículos Audi</p>
         </div>
 
         <div className="flex flex-col lg:flex-row gap-8">
           
           {/* Sidebar de Filtros */}
           <aside className="lg:w-80 shrink-0">
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 sticky top-24">
+              <div className="bg-white/5 border border-white/10 rounded-2xl p-8 sticky top-24">
               
               {/* Tipo de Motor */}
               <div className="mb-8 pb-8 border-b border-white/10">
-                <h3 className="font-bold text-lg mb-4">Tipo de Motor</h3>
+                <h3 className="font-light text-lg mb-4">Tipo de Motor</h3>
                 <div className="flex flex-wrap gap-2">
                   {tiposMotor.map((tipo) => (
                     <label 
                       key={tipo.id} 
                       className={`
-                        inline-flex items-center px-4 py-2 rounded-full cursor-pointer
+                        inline-flex items-center px-4 py-2 rounded-full cursor-pointer transition-all duration-300
                         ${selectedFilters.motor.includes(tipo.id)
-                          ? 'bg-white text-[#101319]'
-                          : 'bg-white/10 border border-white/20 hover:bg-white/20'
+                          ? 'bg-white text-[#101319] font-medium'
+                          : 'bg-white/10 border border-white/20 hover:bg-white/20 font-light'
                         }
                       `}
                     >
@@ -97,7 +103,7 @@ export default function ModelosPage() {
                         onChange={() => toggleFilter('motor', tipo.id)}
                         className="sr-only"
                       />
-                      <span className="text-sm font-medium">{tipo.label}</span>
+                      <span className="text-sm">{tipo.label}</span>
                     </label>
                   ))}
                 </div>
@@ -105,7 +111,7 @@ export default function ModelosPage() {
 
               {/* Modelos */}
               <div className="mb-8 pb-8 border-b border-white/10">
-                <h3 className="font-bold text-lg mb-4">Modelos</h3>
+                <h3 className="font-light text-lg mb-4">Modelos</h3>
                 <div className="flex flex-wrap gap-2">
                   {modelosFiltro.map((modelo) => (
                     <label 
@@ -124,7 +130,7 @@ export default function ModelosPage() {
                         onChange={() => toggleFilter('modelos', modelo.id)}
                         className="sr-only"
                       />
-                      <span className="text-sm font-medium">{modelo.name}</span>
+                      <span className={`text-sm ${selectedFilters.modelos.includes(modelo.id) ? 'font-medium' : 'font-light'}`}>{modelo.name}</span>
                     </label>
                   ))}
                 </div>
@@ -132,7 +138,7 @@ export default function ModelosPage() {
 
               {/* Carrocería */}
               <div className="mb-8 pb-8 border-b border-white/10">
-                <h3 className="font-bold text-lg mb-4">Carrocería</h3>
+                <h3 className="font-light text-lg mb-4">Carrocería</h3>
                 <div className="flex flex-wrap gap-2">
                   {carrocerias.map((carroceria) => (
                     <label 
@@ -151,7 +157,7 @@ export default function ModelosPage() {
                         onChange={() => toggleFilter('carroceria', carroceria.id)}
                         className="sr-only"
                       />
-                      <span className="text-sm font-medium">{carroceria.label}</span>
+                      <span className={`text-sm ${selectedFilters.carroceria.includes(carroceria.id) ? 'font-medium' : 'font-light'}`}>{carroceria.label}</span>
                     </label>
                   ))}
                 </div>
@@ -181,10 +187,10 @@ export default function ModelosPage() {
           <main className="flex-1">
             
             {/* Contador */}
-            <div className="mb-8">
-              <p className="text-xl">
-                <span className="font-bold">{modelos.length}</span>
-                <span className="text-gray-400"> modelos disponibles</span>
+            <div className="mb-10">
+              <p className="text-3xl md:text-4xl font-light">
+                <span className="text-white">{modelos.length}</span>
+                <span className="text-gray-400 font-light"> modelos disponibles</span>
               </p>
             </div>
 
@@ -199,26 +205,27 @@ export default function ModelosPage() {
                   <div className="bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:bg-white/10 hover:border-white/30">
                     
                     {/* Header */}
-                    <div className="px-6 py-4 border-b border-white/10">
-                      <h3 className="text-2xl font-bold">Audi {modelo.name}</h3>
+                    <div className="px-8 py-6 border-b border-white/10">
+                      <h3 className="text-3xl md:text-4xl font-light">Audi {modelo.name}</h3>
                     </div>
 
                     {/* Imagen */}
-                    <div className="relative w-full h-48 bg-black/20">
+                    {/* RECOMENDACIÓN: Imagen del modelo específico (A1, A3, A5, etc.) en color destacado, vista lateral o frontal profesional */}
+                    <div className="relative w-full h-56 bg-black/20 group-hover:bg-black/30 transition-colors">
                       <Image
                         src={modelo.image}
                         alt={`Audi ${modelo.name}`}
                         fill
-                        className="object-contain p-6"
+                        className="object-contain p-8 group-hover:scale-105 transition-transform duration-500"
                       />
                     </div>
 
                     {/* Footer */}
-                    <div className="px-6 py-4 flex items-center justify-between border-t border-white/10">
-                      <span className="text-sm text-gray-400">
+                    <div className="px-8 py-6 flex items-center justify-between border-t border-white/10">
+                      <span className="text-sm text-gray-400 font-light">
                         {modelo.count} {modelo.count === 1 ? 'Versión' : 'Versiones'}
                       </span>
-                      <ChevronRight size={20} className="text-gray-400 group-hover:text-white" />
+                      <ChevronRight size={20} className="text-gray-400 group-hover:text-white group-hover:translate-x-1 transition-all" />
                     </div>
                   </div>
                 </Link>
@@ -226,14 +233,14 @@ export default function ModelosPage() {
             </div>
 
             {/* CTA final */}
-            <div className="mt-16 text-center">
-              <p className="text-gray-400 mb-4">¿No encontrás lo que buscás?</p>
+            <div className="mt-20 text-center">
+              <p className="text-gray-400 mb-6 font-light">¿No encontrás lo que buscás?</p>
               <Link
                 href="/contacto"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#101319] rounded-full font-semibold hover:bg-gray-200"
+                className="inline-flex items-center gap-2 px-10 py-4 bg-white text-[#101319] rounded-full font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
               >
                 Contactá con un asesor
-                <ChevronRight size={20} />
+                <ChevronRight size={18} />
               </Link>
             </div>
           </main>

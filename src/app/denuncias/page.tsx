@@ -53,7 +53,7 @@ export default function DenunciasPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-black via-black/90 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
         </div>
         
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-center">
@@ -65,10 +65,10 @@ export default function DenunciasPage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2" />
             </div>
             
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              En UB Motors estamos a tu disposición
+            <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight tracking-tight">
+              Estamos a tu disposición
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300">
+            <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
               Canal confidencial para reportar incumplimientos de leyes o normativas internas
             </p>
           </div>
@@ -83,7 +83,7 @@ export default function DenunciasPage() {
               <AlertTriangle className="w-6 h-6 text-white" />
             </div>
             <div>
-              <h2 className="text-2xl font-bold mb-3 text-[#BB0A30]">Importante</h2>
+              <h2 className="text-2xl font-light mb-3 text-[#BB0A30]">Importante</h2>
               <p className="text-gray-300 leading-relaxed">
                 El canal de denuncias debe ser utilizado <span className="font-semibold text-white">exclusivamente 
                 para reportar incumplimientos de leyes o normativas internas</span>. Para casos de atención 
@@ -106,7 +106,13 @@ export default function DenunciasPage() {
             {/* Información */}
             <div>
               <div className="mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                <div className="inline-block mb-6">
+                  <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                    Información
+                  </span>
+                  <div className="h-px w-20 bg-white mt-2" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
                   Canal de Denuncias
                 </h2>
                 <p className="text-gray-400 text-lg leading-relaxed mb-6">
@@ -121,7 +127,7 @@ export default function DenunciasPage() {
                   <div className="flex items-start gap-3">
                     <Shield className="w-5 h-5 text-[#BB0A30] shrink-0 mt-1" />
                     <div>
-                      <h3 className="font-semibold mb-2">Violaciones de leyes o regulaciones</h3>
+                      <h3 className="font-light text-lg mb-2">Violaciones de leyes o regulaciones</h3>
                       <p className="text-gray-400 text-sm">
                         Incumplimiento de normativas legales vigentes
                       </p>
@@ -180,7 +186,7 @@ export default function DenunciasPage() {
 
               {/* Garantías */}
               <div className="bg-linear-to-br from-[#BB0A30]/20 to-[#BB0A30]/5 p-6 rounded-xl border border-[#BB0A30]/30">
-                <h3 className="text-xl font-bold mb-4">Garantías de confidencialidad</h3>
+                <h3 className="text-xl font-light mb-4">Garantías de confidencialidad</h3>
                 <ul className="space-y-2 text-gray-300">
                   <li className="flex items-start gap-2">
                     <span className="text-[#BB0A30] mt-1">•</span>
@@ -202,7 +208,13 @@ export default function DenunciasPage() {
             <div>
               <div className="bg-linear-to-br from-[#101319] to-[#1a1f2b] p-8 md:p-10 rounded-2xl border border-white/10 sticky top-24">
                 <div className="mb-8">
-                  <h2 className="text-3xl font-bold mb-3">Completá el formulario</h2>
+                  <div className="inline-block mb-4">
+                  <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                    Formulario
+                  </span>
+                  <div className="h-px w-20 bg-white mt-2" />
+                </div>
+                <h2 className="text-3xl md:text-4xl font-light mb-3 tracking-tight">Completá el formulario</h2>
                   <p className="text-gray-400">
                     Envianos tus datos y en breve nos comunicaremos con vos.
                   </p>

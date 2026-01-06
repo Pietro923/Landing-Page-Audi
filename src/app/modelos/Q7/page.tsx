@@ -61,31 +61,37 @@ export default function Q7Page() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#0a0d11] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
         </div>
         
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-end pb-20">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">Q7</h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+          <div className="inline-block mb-6">
+            <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+              Modelo
+            </span>
+            <div className="h-px w-20 bg-white mt-2" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-light mb-4 tracking-tight">Q7</h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl font-light">
             Poder sin límites
           </p>
           
           <div className="flex flex-wrap gap-4">
             <Link
               href="/configurador/q7"
-              className="px-8 py-4 bg-white text-[#101319] rounded-full font-semibold hover:bg-gray-200"
+              className="px-10 py-4 bg-white text-[#101319] rounded-full font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
             >
               Configurar
             </Link>
             <Link
               href="/stock?modelo=q7"
-              className="px-8 py-4 bg-white/10 border border-white/30 rounded-full font-semibold hover:bg-white/20"
+              className="px-10 py-4 bg-white/10 border border-white/30 rounded-full font-medium hover:bg-white/20 transition-all duration-300 uppercase tracking-wider"
             >
               Ver Stock
             </Link>
             <Link
               href="/contacto"
-              className="px-8 py-4 bg-white/10 border border-white/30 rounded-full font-semibold hover:bg-white/20"
+              className="px-10 py-4 bg-white/10 border border-white/30 rounded-full font-medium hover:bg-white/20 transition-all duration-300 uppercase tracking-wider"
             >
               Solicitar asesoramiento
             </Link>
@@ -96,7 +102,7 @@ export default function Q7Page() {
       {/* Introducción */}
       <section className="py-20 px-6">
         <div className="max-w-screen-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
             Todo lo que deseas
           </h2>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
@@ -109,7 +115,7 @@ export default function Q7Page() {
       {/* Galería de Imágenes */}
       <section className="py-20 px-6 max-w-screen-2xl mx-auto">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Unas dimensiones impresionantes</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-4 tracking-tight">Unas dimensiones impresionantes</h2>
           <p className="text-gray-400 text-lg">
             Las proporciones del Audi Q7 SUV impresionan. Las generosas dimensiones del exterior 
             continúan en el interior con espacio para hasta siete personas
@@ -169,7 +175,7 @@ export default function Q7Page() {
                 <div className="flex justify-center mb-6 text-white">
                   {spec.icon}
                 </div>
-                <p className="text-4xl font-bold mb-2">{spec.value}</p>
+                <p className="text-4xl font-light mb-2">{spec.value}</p>
                 <p className="text-gray-400 text-lg">{spec.label}</p>
                 {spec.sublabel && (
                   <p className="text-gray-500 text-sm mt-2">{spec.sublabel}</p>
@@ -185,7 +191,7 @@ export default function Q7Page() {
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Poder y elegancia, unidos</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Poder y elegancia, unidos</h2>
               <p className="text-gray-300 leading-relaxed">
                 El nuevo Audi Q7 SUV muestra su ADN off-road con la clásica arquitectura quattro 
                 y una poderosa línea exterior. Un diseño que incluye una nueva y llamativa parrilla 
@@ -217,7 +223,7 @@ export default function Q7Page() {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Deportivo de principio a fin</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Deportivo de principio a fin</h2>
               <p className="text-gray-300 leading-relaxed">
                 Los difusores con salidas de escape integradas indican la potencia del Audi Q7 SUV. 
                 Los aros Audi en aspecto 2D delante son una muestra clara del nuevo lenguaje de diseño. 
@@ -234,7 +240,7 @@ export default function Q7Page() {
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Espacio para hasta siete plazas</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Espacio para hasta siete plazas</h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 Haz espacio para hasta siete personas con la tercera fila de asientos. Además, los 
                 soportes ISOFIX para asientos infantiles con correa superior están disponibles para 
@@ -260,7 +266,7 @@ export default function Q7Page() {
       {/* Versatilidad dinámica */}
       <section className="py-20 px-6 bg-white/5">
         <div className="max-w-screen-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Versatilidad dinámica</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Versatilidad dinámica</h2>
           <p className="text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
             Con unas impresionantes prestaciones deportivas, amplias capacidades off-road y la 
             posibilidad de remolcar hasta 3,5 toneladas, el Audi Q7 SUV te ofrece el mejor 
@@ -282,7 +288,7 @@ export default function Q7Page() {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Diversión asegurada</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Diversión asegurada</h2>
               <p className="text-gray-300 leading-relaxed mb-6">
                 El Audi Q7 SUV incorpora de serie la legendaria tracción quattro que te ofrece un 
                 control preciso y una tracción insuperable en todas las situaciones.
@@ -303,7 +309,7 @@ export default function Q7Page() {
             
             {/* Configurador */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-4">A tu medida</h3>
+              <h3 className="text-2xl font-light mb-4">A tu medida</h3>
               <p className="text-gray-300 mb-6">
                 Dale tu propio estilo eligiendo cada detalle.
               </p>
@@ -342,7 +348,7 @@ export default function Q7Page() {
               href="/modelos/q7/dimensiones"
               className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/30"
             >
-              <h3 className="text-2xl font-bold mb-4">Dimensiones</h3>
+              <h3 className="text-2xl font-light mb-4">Dimensiones</h3>
               <p className="text-gray-300 mb-6">Conocé las medidas exactas del Q7 SUV</p>
               <span className="inline-flex items-center gap-2 text-white">
                 Saber más
@@ -368,7 +374,7 @@ export default function Q7Page() {
       {/* Modelos relacionados */}
       <section className="py-20 px-6 bg-white/5">
         <div className="max-w-screen-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+          <h2 className="text-4xl md:text-5xl font-light mb-12 text-center tracking-tight">
             Quizás también te interese…
           </h2>
           
@@ -389,7 +395,7 @@ export default function Q7Page() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">Audi {model.name}</h3>
+                    <h3 className="text-xl font-light mb-2">Audi {model.name}</h3>
                     <span className="inline-flex items-center gap-2 text-gray-400 group-hover:text-white">
                       Ver modelo
                       <ChevronRight size={16} />
@@ -405,7 +411,7 @@ export default function Q7Page() {
       {/* CTA Final */}
       <section className="py-20 px-6">
         <div className="max-w-screen-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
             Personaliza hasta el último detalle
           </h2>
           <p className="text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
@@ -415,13 +421,13 @@ export default function Q7Page() {
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/configurador/q7"
-              className="px-8 py-4 bg-white text-[#101319] rounded-full font-semibold hover:bg-gray-200"
+              className="px-10 py-4 bg-white text-[#101319] rounded-full font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
             >
               Configurar el Audi Q7 SUV
             </Link>
             <Link
               href="/contacto"
-              className="px-8 py-4 bg-white/10 border border-white/30 rounded-full font-semibold hover:bg-white/20"
+              className="px-10 py-4 bg-white/10 border border-white/30 rounded-full font-medium hover:bg-white/20 transition-all duration-300 uppercase tracking-wider"
             >
               Solicitar asesoramiento
             </Link>

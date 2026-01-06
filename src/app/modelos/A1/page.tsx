@@ -42,25 +42,31 @@ export default function A1Page() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#0a0d11] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
         </div>
         
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-end pb-20">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">A1 Sportback</h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+          <div className="inline-block mb-6">
+            <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+              Modelo
+            </span>
+            <div className="h-px w-20 bg-white mt-2" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-light mb-4 tracking-tight">A1 Sportback</h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl font-light leading-relaxed">
             Ágil y deportivo. El Audi A1 Sportback es un compacto que impresiona tanto por su diseño deportivo como por sus amplias opciones de equipamiento.
           </p>
           
           <div className="flex flex-wrap gap-4">
             <Link
               href="/configurador/a1"
-              className="px-8 py-4 bg-white text-[#101319] rounded-full font-semibold hover:bg-gray-200"
+              className="px-10 py-4 bg-white text-[#101319] rounded-full font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
             >
               Configurar
             </Link>
             <Link
               href="/contacto"
-              className="px-8 py-4 bg-white/10 border border-white/30 rounded-full font-semibold hover:bg-white/20"
+              className="px-10 py-4 bg-white/10 border border-white/30 rounded-full font-medium hover:bg-white/20 transition-all duration-300 uppercase tracking-wider"
             >
               Solicitar asesoramiento
             </Link>
@@ -71,7 +77,7 @@ export default function A1Page() {
       {/* Galería de Imágenes */}
       <section className="py-20 px-6 max-w-screen-2xl mx-auto">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Dinamismo exclusivo</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-4 tracking-tight">Dinamismo exclusivo</h2>
           <p className="text-gray-400 text-lg">
             El Audi A1 Sportback sorprende por sus líneas fluidas y convence por sus excelentes acabados.
           </p>
@@ -129,7 +135,7 @@ export default function A1Page() {
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Tu Audi, tu estilo</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Tu Audi, tu estilo</h2>
               <p className="text-gray-300 leading-relaxed">
                 El Rojo Progresivo metalizado, el Azul Navarra metalizado, el Gris Flecha efecto Perla y otros cinco tonos de pintura están disponibles para que elijas el color que mejor te define. Y si quieres darle tu toque personal puedes elegir el techo color Gris Manhattan metalizado o el Negro Mythos metalizado. Y si lo deseas, personaliza también los faldones laterales y las carcasas de los retrovisores exteriores con colores de contraste.
               </p>
@@ -159,7 +165,7 @@ export default function A1Page() {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Centrado en el conductor</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Centrado en el conductor</h2>
               <p className="text-gray-300 leading-relaxed">
                 El Audi A1 Sportback es pura deportividad ideada para hacerte disfrutar cada segundo. Desde el diseño de las boquillas de ventilación hasta los instrumentos digitales, todo ha sido diseñado con un fuerte componente deportivo.
               </p>
@@ -173,7 +179,7 @@ export default function A1Page() {
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Sube de nivel</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Sube de nivel</h2>
               <p className="text-gray-300 leading-relaxed mb-8">
                 Equipa tu Audi A1 Sportback con el sistema opcional MMI navegación plus con MMI touch con mapas de ciudades en 3D y contrólalo a través del panel táctil.
               </p>
@@ -193,7 +199,7 @@ export default function A1Page() {
       {/* Disfruta más */}
       <section className="py-20 px-6">
         <div className="max-w-screen-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Disfruta más</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Disfruta más</h2>
           <p className="text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
             Elige entre las diferentes motorizaciones y siente su deportividad gracias al potente 35 TFSI S tronic con 110 kW (150 CV).
           </p>
@@ -213,7 +219,7 @@ export default function A1Page() {
             
             {/* Configurador */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-4">Configurador</h3>
+              <h3 className="text-2xl font-light mb-4">Configurador</h3>
               <p className="text-gray-300 mb-6">
                 Dale tu propio estilo eligiendo cada detalle.
               </p>
@@ -252,7 +258,7 @@ export default function A1Page() {
               href="/modelos/A1/dimensiones"
               className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/30"
             >
-              <h3 className="text-2xl font-bold mb-4">Dimensiones</h3>
+              <h3 className="text-2xl font-light mb-4">Dimensiones</h3>
               <p className="text-gray-300 mb-6">Conocé las medidas exactas del A1 Sportback</p>
               <span className="inline-flex items-center gap-2 text-white">
                 Saber más
@@ -278,7 +284,7 @@ export default function A1Page() {
       {/* Modelos relacionados */}
       <section className="py-20 px-6 bg-white/5">
         <div className="max-w-screen-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+          <h2 className="text-4xl md:text-5xl font-light mb-12 text-center tracking-tight">
             Quizás también te interese…
           </h2>
           
@@ -299,7 +305,7 @@ export default function A1Page() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">Audi {model.name}</h3>
+                    <h3 className="text-xl font-light mb-2">Audi {model.name}</h3>
                     <span className="inline-flex items-center gap-2 text-gray-400 group-hover:text-white">
                       Saber más
                       <ChevronRight size={16} />
@@ -315,7 +321,7 @@ export default function A1Page() {
       {/* CTA Final */}
       <section className="py-20 px-6">
         <div className="max-w-screen-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
             Personaliza hasta el último detalle
           </h2>
           <p className="text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
@@ -324,13 +330,13 @@ export default function A1Page() {
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/configurador/a1"
-              className="px-8 py-4 bg-white text-[#101319] rounded-full font-semibold hover:bg-gray-200"
+              className="px-10 py-4 bg-white text-[#101319] rounded-full font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
             >
               Configurar el Audi A1 Sportback
             </Link>
             <Link
               href="/contacto"
-              className="px-8 py-4 bg-white/10 border border-white/30 rounded-full font-semibold hover:bg-white/20"
+              className="px-10 py-4 bg-white/10 border border-white/30 rounded-full font-medium hover:bg-white/20 transition-all duration-300 uppercase tracking-wider"
             >
               Solicitar asesoramiento
             </Link>

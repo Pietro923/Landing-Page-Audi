@@ -81,7 +81,7 @@ export default function AudiLoungePage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-black via-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
         </div>
         
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-center">
@@ -93,10 +93,10 @@ export default function AudiLoungePage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2" />
             </div>
             
-            <h1 className="text-5xl md:text-7xl  mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight tracking-tight">
               Audi Lounge
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed font-light">
               Un espacio sociocultural diseñado para llevar tu experiencia y tus sentidos al siguiente nivel
             </p>
             
@@ -129,7 +129,7 @@ export default function AudiLoungePage() {
                 <div className="h-px w-20 bg-[#BB0A30] mt-2" />
               </div>
               
-              <h2 className="text-4xl md:text-5xl  mb-8">
+              <h2 className="text-4xl md:text-5xl font-light mb-8 tracking-tight">
                 Bienvenidos a Audi Lounge
               </h2>
               
@@ -262,7 +262,7 @@ export default function AudiLoungePage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2 mx-auto" />
             </div>
             
-            <h2 className="text-4xl md:text-5xl  mb-6">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
               Amenities de Audi Lounge
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
@@ -306,7 +306,7 @@ export default function AudiLoungePage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2 mx-auto" />
             </div>
             
-            <h2 className="text-4xl md:text-5xl  mb-6">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
               Preguntas Frecuentes
             </h2>
             <p className="text-gray-400 text-lg">

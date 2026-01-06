@@ -45,15 +45,21 @@ export default function Q5IndexPage() {
             <ChevronRight size={16} className="rotate-180" />
             Volver a todos los modelos
           </Link>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Audi Q5</h1>
-          <p className="text-gray-400 text-lg">Elegí la versión que mejor se adapte a tu estilo</p>
+          <div className="inline-block mb-6">
+            <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+              Modelo
+            </span>
+            <div className="h-px w-20 bg-white mt-2" />
+          </div>
+          <h1 className="text-5xl md:text-6xl font-light mb-4 tracking-tight">Audi Q5</h1>
+          <p className="text-gray-300 text-lg md:text-xl font-light">Elegí la versión que mejor se adapte a tu estilo</p>
         </div>
 
         {/* Contador */}
-        <div className="mb-8">
-          <p className="text-xl">
-            <span className="font-bold">{versionesQ5.length}</span>
-            <span className="text-gray-400"> versiones disponibles</span>
+        <div className="mb-10">
+          <p className="text-3xl md:text-4xl font-light">
+            <span className="text-white">{versionesQ5.length}</span>
+            <span className="text-gray-400 font-light"> versiones disponibles</span>
           </p>
         </div>
 
@@ -79,7 +85,7 @@ export default function Q5IndexPage() {
 
                 {/* Contenido */}
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">{version.name}</h3>
+                  <h3 className="text-2xl md:text-3xl font-light mb-2">{version.name}</h3>
                   <p className="text-gray-400 text-sm mb-4">{version.description}</p>
                   
                   <div className="flex items-center justify-between text-sm mb-4">
@@ -104,7 +110,7 @@ export default function Q5IndexPage() {
           <p className="text-gray-400 mb-4">¿Necesitás ayuda para elegir?</p>
           <Link
             href="/contacto"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[#101319] rounded-full font-semibold hover:bg-gray-200"
+            className="inline-flex items-center gap-2 px-10 py-4 bg-white text-[#101319] rounded-full font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
           >
             Contactá con un asesor
             <ChevronRight size={20} />

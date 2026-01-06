@@ -97,16 +97,20 @@ export default function Navbar() {
         `}
       >
         {/* Logo a la izquierda con absolute */}
-        <div className="flex items-center absolute left-6 md:left-20">
-          <Link href="/" className="flex items-center">
+        <div className="flex items-center gap-3 absolute left-6 md:left-20">
+          <Link href="/" className="flex items-center gap-3 group">
             <Image
               src="/Logos/Audi.svg"
-              alt="Audi Argentina"
+              alt="Audi"
               width={96}
               height={24}
               className="w-20 md:w-24 h-auto brightness-0 invert hover:scale-105 transition-transform duration-300"
               priority
             />
+            <div className="hidden md:block h-6 w-px bg-white/30" />
+            <span className="hidden lg:block text-sm font-medium text-white/80 group-hover:text-white transition-colors">
+              UB Motors
+            </span>
           </Link>
         </div>
         

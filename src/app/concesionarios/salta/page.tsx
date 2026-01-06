@@ -1,68 +1,98 @@
 import Image from 'next/image';
 import { MapPin, Phone, Clock, Wrench, Car, Package, Trophy, Users } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 export default function Salta() {
   return (
-    <div className="bg-white">
+    <div className="bg-[#0a0d11] text-white">
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-125 bg-[#101319]">
+      <section className="relative h-screen min-h-[600px] bg-[#101319]">
         <div className="absolute inset-0">
+          {/* RECOMENDACIÓN: Vista exterior del concesionario de Salta con Audi y Ducati visibles, o showroom con ambas marcas */}
           <Image
-            src="/concesionarios/salta/Salta.jpg"
-            alt="Concesionario Audi Salta"
+            src="/Concesionarios/salta/exterior.jpg"
+            alt="UB Motors Salta - Concesionario Audi y Ducati"
             fill
-            className="object-cover opacity-40"
+            className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
         </div>
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4">
-            Audi Salta
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
-            Excelencia automotriz en el corazón del Norte Argentino
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="bg-white text-black hover:bg-gray-200">
-              Contactar ahora
-            </Button>
-            <Button size="lg" variant="outline" className="bg-white text-black hover:bg-gray-200">
-              Ver stock disponible
-            </Button>
+          <div className="max-w-4xl">
+            <div className="inline-block mb-6">
+              <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                UB Motors Salta
+              </span>
+              <div className="h-px w-20 bg-white mt-2" />
+            </div>
+            <h1 className="text-5xl md:text-7xl font-light text-white mb-6 tracking-tight">
+              Audi Salta
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl font-light leading-relaxed">
+              Excelencia automotriz en el corazón del Norte Argentino. 
+              También Ducati disponible en nuestras instalaciones.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="/contacto"
+                className="inline-block bg-white text-[#101319] px-10 py-4 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider rounded-full"
+              >
+                Contactar ahora
+              </a>
+              <a
+                href="/modelos"
+                className="inline-block border-2 border-white text-white px-10 py-4 text-base font-medium hover:bg-white hover:text-[#101319] transition-all duration-300 uppercase tracking-wider rounded-full"
+              >
+                Ver stock disponible
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Información de contacto */}
-      <section className="bg-gray-50 py-12">
-        <div className="max-w-screen-2xl mx-auto px-6">
+      <section className="bg-[#101319] py-16 px-6">
+        <div className="max-w-screen-2xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="flex gap-4">
-              <MapPin className="text-[#101319] shrink-0" size={24} />
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Dirección</h3>
-                <p className="text-gray-600">Av. Belgrano 1050</p>
-                <p className="text-gray-600">Salta Capital</p>
-                <p className="text-gray-600">Salta, Argentina</p>
+            <div className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300">
+              <div className="flex gap-4 mb-4">
+                <div className="bg-white/10 p-3 rounded-lg shrink-0">
+                  <MapPin className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-light text-xl mb-3">Dirección</h3>
+                  <p className="text-gray-300 font-light">Av. Belgrano 1050</p>
+                  <p className="text-gray-300 font-light">Salta Capital</p>
+                  <p className="text-gray-300 font-light">Salta, Argentina</p>
+                </div>
               </div>
             </div>
-            <div className="flex gap-4">
-              <Phone className="text-[#101319] shrink-0" size={24} />
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Contacto</h3>
-                <p className="text-gray-600">Ventas: (387) 431-5000</p>
-                <p className="text-gray-600">Servicio: (387) 431-5001</p>
-                <p className="text-gray-600">salta@ubmotors.com.ar</p>
+            <div className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300">
+              <div className="flex gap-4 mb-4">
+                <div className="bg-white/10 p-3 rounded-lg shrink-0">
+                  <Phone className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-light text-xl mb-3">Contacto</h3>
+                  <p className="text-gray-300 font-light">Ventas: (387) 431-5000</p>
+                  <p className="text-gray-300 font-light">Servicio: (387) 431-5001</p>
+                  <a href="mailto:salta@ubmotors.com.ar" className="text-gray-300 font-light hover:text-white transition">
+                    salta@ubmotors.com.ar
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="flex gap-4">
-              <Clock className="text-[#101319] shrink-0" size={24} />
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Horarios</h3>
-                <p className="text-gray-600">Lun a Vie: 9:00 - 19:30</p>
-                <p className="text-gray-600">Sábados: 9:00 - 13:30</p>
-                <p className="text-gray-600">Domingos: Cerrado</p>
+            <div className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-white/30 transition-all duration-300">
+              <div className="flex gap-4 mb-4">
+                <div className="bg-white/10 p-3 rounded-lg shrink-0">
+                  <Clock className="text-white" size={24} />
+                </div>
+                <div>
+                  <h3 className="font-light text-xl mb-3">Horarios</h3>
+                  <p className="text-gray-300 font-light">Lun a Vie: 9:00 - 19:30</p>
+                  <p className="text-gray-300 font-light">Sábados: 9:00 - 13:30</p>
+                  <p className="text-gray-300 font-light">Domingos: Cerrado</p>
+                </div>
               </div>
             </div>
           </div>
@@ -70,248 +100,313 @@ export default function Salta() {
       </section>
 
       {/* Por qué elegirnos */}
-      <section className="py-20">
-        <div className="max-w-screen-2xl mx-auto px-6">
+      <section className="py-24 px-6 bg-[#0a0d11]">
+        <div className="max-w-screen-2xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <div className="inline-block mb-6">
+              <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                Sobre nosotros
+              </span>
+              <div className="h-px w-20 bg-white mt-2 mx-auto" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
               Tu Concesionario Audi y Ducati en Salta
             </h2>
+            <p className="text-gray-400 text-lg font-light max-w-2xl mx-auto">
+              Único concesionario en Salta con ambas marcas premium
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            <div className="text-center p-6">
-              <div className="bg-[#101319] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Trophy className="text-white" size={32} />
+            <div className="text-center bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-500 group">
+              <div className="bg-white/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                <Trophy className="text-white group-hover:text-[#101319] transition-colors" size={32} />
               </div>
-              <h3 className="font-semibold text-xl mb-2">Concesionario Líder</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="font-light text-xl mb-3">Concesionario Líder</h3>
+              <p className="text-gray-400 text-sm font-light leading-relaxed">
                 Reconocidos por Audi Argentina como mejor concesionario del NOA
               </p>
             </div>
 
-            <div className="text-center p-6">
-              <div className="bg-[#101319] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="text-white" size={32} />
+            <div className="text-center bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-500 group">
+              <div className="bg-white/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                <Users className="text-white group-hover:text-[#101319] transition-colors" size={32} />
               </div>
-              <h3 className="font-semibold text-xl mb-2">Equipo Experto</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="font-light text-xl mb-3">Equipo Experto</h3>
+              <p className="text-gray-400 text-sm font-light leading-relaxed">
                 Profesionales certificados por Audi AG con capacitación continua
               </p>
             </div>
 
-            <div className="text-center p-6">
-              <div className="bg-[#101319] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Car className="text-white" size={32} />
+            <div className="text-center bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-500 group">
+              <div className="bg-white/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                <Car className="text-white group-hover:text-[#101319] transition-colors" size={32} />
               </div>
-              <h3 className="font-semibold text-xl mb-2">Stock Permanente</h3>
-              <p className="text-gray-600 text-sm">
-                Amplia disponibilidad de modelos y versiones para entrega inmediata
+              <h3 className="font-light text-xl mb-3">Stock Permanente</h3>
+              <p className="text-gray-400 text-sm font-light leading-relaxed">
+                Amplia disponibilidad de modelos Audi y Ducati para entrega inmediata
               </p>
             </div>
 
-            <div className="text-center p-6">
-              <div className="bg-[#101319] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Wrench className="text-white" size={32} />
+            <div className="text-center bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-white/30 hover:bg-white/10 transition-all duration-500 group">
+              <div className="bg-white/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                <Wrench className="text-white group-hover:text-[#101319] transition-colors" size={32} />
               </div>
-              <h3 className="font-semibold text-xl mb-2">Service Garantizado</h3>
-              <p className="text-gray-600 text-sm">
+              <h3 className="font-light text-xl mb-3">Service Garantizado</h3>
+              <p className="text-gray-400 text-sm font-light leading-relaxed">
                 Taller oficial con garantía en todas las reparaciones y servicios
               </p>
             </div>
+          </div>
+          
+          {/* Destacado Ducati */}
+          <div className="bg-gradient-to-br from-[#BB0A30]/20 to-[#BB0A30]/5 p-8 rounded-2xl border border-[#BB0A30]/30 text-center">
+            <h3 className="text-2xl md:text-3xl font-light mb-4">También Ducati</h3>
+            <p className="text-gray-300 font-light max-w-2xl mx-auto">
+              En nuestra sucursal de Salta también podés encontrar la gama completa de motocicletas Ducati. 
+              Experiencia premium en dos y cuatro ruedas.
+            </p>
           </div>
         </div>
       </section>
 
       {/* Servicios principales */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-screen-2xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
-            Servicios Integrales Audi
-          </h2>
+      <section className="bg-[#101319] py-24 px-6">
+        <div className="max-w-screen-2xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block mb-6">
+              <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                Servicios
+              </span>
+              <div className="h-px w-20 bg-white mt-2 mx-auto" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
+              Servicios Integrales Audi
+            </h2>
+            <p className="text-gray-400 text-lg font-light max-w-2xl mx-auto">
+              Experiencia premium en cada visita
+            </p>
+          </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Ventas */}
-            <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition">
-              <div className="bg-[#101319] w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <Car className="text-white" size={32} />
+            <div className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/30 transition-all duration-500">
+              <div className="bg-white/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                <Car className="text-white group-hover:text-[#101319] transition-colors" size={32} />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Ventas Premium</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-2xl font-light mb-4">Ventas Premium</h3>
+              <p className="text-gray-300 mb-6 font-light leading-relaxed">
                 Asesoramiento personalizado para encontrar el Audi perfecto para vos. 
                 Desde compactos deportivos hasta SUV de lujo, tenemos lo que buscás.
               </p>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2 text-gray-600">
-                  <span className="text-[#101319] mt-1">•</span>
+                <li className="flex items-start gap-2 text-gray-300 font-light">
+                  <span className="text-white mt-1">•</span>
                   <span>Test drive sin compromiso en ruta</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-600">
-                  <span className="text-[#101319] mt-1">•</span>
+                <li className="flex items-start gap-2 text-gray-300 font-light">
+                  <span className="text-white mt-1">•</span>
                   <span>Planes de financiación personalizados</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-600">
-                  <span className="text-[#101319] mt-1">•</span>
+                <li className="flex items-start gap-2 text-gray-300 font-light">
+                  <span className="text-white mt-1">•</span>
                   <span>Tasación y retoma de tu usado</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-600">
-                  <span className="text-[#101319] mt-1">•</span>
+                <li className="flex items-start gap-2 text-gray-300 font-light">
+                  <span className="text-white mt-1">•</span>
                   <span>Gestión integral de documentación</span>
                 </li>
               </ul>
-              <Button className="w-full bg-[#101319] hover:bg-[#1a1f2b]">
+              <a
+                href="/modelos"
+                className="block w-full bg-white text-[#101319] px-6 py-3 text-center font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider rounded-full mt-6"
+              >
                 Consultar modelos
-              </Button>
+              </a>
             </div>
 
             {/* Service */}
-            <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition">
-              <div className="bg-[#101319] w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <Wrench className="text-white" size={32} />
+            <div className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/30 transition-all duration-500">
+              <div className="bg-white/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                <Wrench className="text-white group-hover:text-[#101319] transition-colors" size={32} />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Service Oficial</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-2xl font-light mb-4">Service Oficial</h3>
+              <p className="text-gray-300 mb-6 font-light leading-relaxed">
                 Mantenimiento y reparación con estándares Audi. Equipamiento de 
                 última generación y repuestos originales garantizados.
               </p>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2 text-gray-600">
-                  <span className="text-[#101319] mt-1">•</span>
+                <li className="flex items-start gap-2 text-gray-300 font-light">
+                  <span className="text-white mt-1">•</span>
                   <span>Mantenimientos programados</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-600">
-                  <span className="text-[#101319] mt-1">•</span>
+                <li className="flex items-start gap-2 text-gray-300 font-light">
+                  <span className="text-white mt-1">•</span>
                   <span>Diagnóstico computarizado avanzado</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-600">
-                  <span className="text-[#101319] mt-1">•</span>
+                <li className="flex items-start gap-2 text-gray-300 font-light">
+                  <span className="text-white mt-1">•</span>
                   <span>Vehículo de cortesía disponible</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-600">
-                  <span className="text-[#101319] mt-1">•</span>
+                <li className="flex items-start gap-2 text-gray-300 font-light">
+                  <span className="text-white mt-1">•</span>
                   <span>Garantía extendida opcional</span>
                 </li>
               </ul>
-              <Button className="w-full bg-[#101319] hover:bg-[#1a1f2b]">
+              <a
+                href="/post-venta"
+                className="block w-full bg-white text-[#101319] px-6 py-3 text-center font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider rounded-full mt-6"
+              >
                 Agendar service
-              </Button>
+              </a>
             </div>
 
             {/* Repuestos */}
-            <div className="bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition">
-              <div className="bg-[#101319] w-16 h-16 rounded-full flex items-center justify-center mb-6">
-                <Package className="text-white" size={32} />
+            <div className="bg-white/5 p-8 rounded-2xl border border-white/10 hover:bg-white/10 hover:border-white/30 transition-all duration-500">
+              <div className="bg-white/10 w-16 h-16 rounded-full flex items-center justify-center mb-6 group-hover:bg-white group-hover:scale-110 transition-all duration-300">
+                <Package className="text-white group-hover:text-[#101319] transition-colors" size={32} />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">Repuestos Originales</h3>
-              <p className="text-gray-600 mb-6">
+              <h3 className="text-2xl font-light mb-4">Repuestos Originales</h3>
+              <p className="text-gray-300 mb-6 font-light leading-relaxed">
                 Amplio stock de repuestos y accesorios originales Audi. Calidad 
                 garantizada y compatibilidad perfecta con tu vehículo.
               </p>
               <ul className="space-y-3 mb-6">
-                <li className="flex items-start gap-2 text-gray-600">
-                  <span className="text-[#101319] mt-1">•</span>
+                <li className="flex items-start gap-2 text-gray-300 font-light">
+                  <span className="text-white mt-1">•</span>
                   <span>Repuestos originales certificados</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-600">
-                  <span className="text-[#101319] mt-1">•</span>
+                <li className="flex items-start gap-2 text-gray-300 font-light">
+                  <span className="text-white mt-1">•</span>
                   <span>Accesorios Audi Sport y personalización</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-600">
-                  <span className="text-[#101319] mt-1">•</span>
+                <li className="flex items-start gap-2 text-gray-300 font-light">
+                  <span className="text-white mt-1">•</span>
                   <span>Llantas y neumáticos premium</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-600">
-                  <span className="text-[#101319] mt-1">•</span>
+                <li className="flex items-start gap-2 text-gray-300 font-light">
+                  <span className="text-white mt-1">•</span>
                   <span>Envíos a todo el interior de Salta</span>
                 </li>
               </ul>
-              <Button className="w-full bg-[#101319] hover:bg-[#1a1f2b]">
+              <a
+                href="/post-venta"
+                className="block w-full bg-white text-[#101319] px-6 py-3 text-center font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider rounded-full mt-6"
+              >
                 Consultar repuestos
-              </Button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Showroom destacado */}
-      <section className="py-20">
-        <div className="max-w-screen-2xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-125 rounded-lg overflow-hidden">
+      <section className="py-24 px-6 bg-[#0a0d11]">
+        <div className="max-w-screen-2xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="relative h-[500px] rounded-2xl overflow-hidden">
+              {/* RECOMENDACIÓN: Showroom con Audi y Ducati visibles, o área de exhibición con ambas marcas */}
               <Image
-                src="/concesionarios/salta/exterior.jpg"
-                alt="Showroom Audi Salta"
+                src="/Concesionarios/salta/exterior.jpg"
+                alt="Showroom Audi y Ducati Salta"
                 fill
-                className="object-cover"
+                className="object-cover hover:scale-105 transition-transform duration-700"
               />
             </div>
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              <div className="inline-block mb-6">
+                <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                  Showroom
+                </span>
+                <div className="h-px w-20 bg-white mt-2" />
+              </div>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
                 Showroom de Primera Línea
               </h2>
-              <p className="text-gray-600 mb-6 text-lg">
+              <p className="text-gray-300 mb-6 text-lg font-light leading-relaxed">
                 Nuestro showroom en plena Av. Belgrano te invita a explorar la gama 
-                completa Audi en un ambiente diseñado para reflejar la filosofía de 
+                completa Audi y Ducati en un ambiente diseñado para reflejar la filosofía de 
                 la marca: innovación, lujo y performance.
               </p>
               <div className="space-y-4 mb-8">
-                <div className="flex gap-4">
-                  <div className="bg-gray-100 p-3 rounded-lg shrink-0">
-                    <Car size={24} className="text-[#101319]" />
+                <div className="flex gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                  <div className="bg-white/10 p-3 rounded-lg shrink-0">
+                    <Car size={24} className="text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Exhibición Permanente</h4>
-                    <p className="text-gray-600 text-sm">
-                      Modelos de todas las líneas: A, Q, e-tron y Audi Sport siempre disponibles
+                    <h4 className="font-light text-lg mb-1">Exhibición Permanente</h4>
+                    <p className="text-gray-400 text-sm font-light">
+                      Modelos de todas las líneas: A, Q, e-tron, Audi Sport y Ducati siempre disponibles
                     </p>
                   </div>
                 </div>
-                <div className="flex gap-4">
-                  <div className="bg-gray-100 p-3 rounded-lg shrink-0">
-                    <Users size={24} className="text-[#101319]" />
+                <div className="flex gap-4 bg-white/5 p-4 rounded-xl border border-white/10">
+                  <div className="bg-white/10 p-3 rounded-lg shrink-0">
+                    <Users size={24} className="text-white" />
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1">Atención Personalizada</h4>
-                    <p className="text-gray-600 text-sm">
+                    <h4 className="font-light text-lg mb-1">Atención Personalizada</h4>
+                    <p className="text-gray-400 text-sm font-light">
                       Asesores expertos para guiarte en cada paso de tu compra
                     </p>
                   </div>
                 </div>
               </div>
-              <Button size="lg" className="bg-[#101319] hover:bg-[#1a1f2b]">
+              <a
+                href="/contacto"
+                className="inline-block bg-white text-[#101319] px-10 py-4 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider rounded-full"
+              >
                 Agendar visita al showroom
-              </Button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
       {/* Galería rápida */}
-      <section className="bg-[#101319] py-20">
-        <div className="max-w-screen-2xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-12">
-            Nuestras Instalaciones
-          </h2>
+      <section className="bg-[#101319] py-24 px-6">
+        <div className="max-w-screen-2xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-block mb-6">
+              <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                Instalaciones
+              </span>
+              <div className="h-px w-20 bg-white mt-2 mx-auto" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight text-white">
+              Nuestras Instalaciones
+            </h2>
+            <p className="text-gray-400 text-lg font-light max-w-2xl mx-auto">
+              Espacios diseñados para la mejor experiencia premium
+            </p>
+          </div>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="relative h-62.5 rounded-lg overflow-hidden">
+            {/* RECOMENDACIÓN: Taller moderno con técnico trabajando, herramientas profesionales, elevador con Audi */}
+            <div className="relative h-[400px] rounded-2xl overflow-hidden group">
               <Image
-                src="/concesionarios/salta/taller.jpg"
-                alt="Taller de servicio"
+                src="/Concesionarios/salta/taller.jpg"
+                alt="Taller de servicio Audi Salta"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <p className="text-white text-xl font-semibold">Taller Certificado</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <p className="text-white text-2xl font-light mb-2">Taller Certificado</p>
+                <p className="text-gray-300 text-sm font-light">Tecnología de punta y técnicos especializados</p>
               </div>
             </div>
-            <div className="relative h-62.5 rounded-lg overflow-hidden">
+            {/* RECOMENDACIÓN: Sala VIP moderna con diseño elegante, área de espera premium */}
+            <div className="relative h-[400px] rounded-2xl overflow-hidden group">
               <Image
-                src="/concesionarios/salta/sala.jpg"
-                alt="Sala de espera"
+                src="/Concesionarios/salta/sala.jpg"
+                alt="Sala VIP Audi Salta"
                 fill
-                className="object-cover"
+                className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <p className="text-white text-xl font-semibold">Sala VIP</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-8">
+                <p className="text-white text-2xl font-light mb-2">Sala VIP</p>
+                <p className="text-gray-300 text-sm font-light">Comodidad y atención premium</p>
               </div>
             </div>
             {/* <div className="relative h-62.5 rounded-lg overflow-hidden">
@@ -330,15 +425,23 @@ export default function Salta() {
       </section>
 
       {/* Mapa */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-screen-2xl mx-auto px-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Ubicación Privilegiada
-          </h2>
-          <p className="text-center text-gray-600 mb-12">
-            Sobre Av. Belgrano, una de las principales avenidas de Salta Capital, con fácil acceso y estacionamiento.
-          </p>
-          <div className="w-full h-112.5 md:h-125 lg:h-150 rounded-lg overflow-hidden shadow-lg">
+      <section className="py-24 px-6 bg-[#0a0d11]">
+        <div className="max-w-screen-2xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-block mb-6">
+              <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+                Ubicación
+              </span>
+              <div className="h-px w-20 bg-white mt-2 mx-auto" />
+            </div>
+            <h2 className="text-4xl md:text-5xl font-light mb-4 tracking-tight">
+              Ubicación Privilegiada
+            </h2>
+            <p className="text-gray-400 text-lg font-light max-w-2xl mx-auto">
+              Sobre Av. Belgrano, una de las principales avenidas de Salta Capital, con fácil acceso y estacionamiento.
+            </p>
+          </div>
+          <div className="w-full h-[600px] rounded-2xl overflow-hidden border border-white/10">
             <iframe 
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.250254351405!2d-65.4195342248504!3d-24.78688287797744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x941bc3006a2ab149%3A0x8c329e44218bb0!2sAudi%20Ub%20Motors%20Salta!5e0!3m2!1ses-419!2sar!4v1767122254894!5m2!1ses-419!2sar" 
               width="100%" 
@@ -354,26 +457,35 @@ export default function Salta() {
       </section>
 
       {/* CTA Final */}
-      <section className="bg-gray-50 py-20">
-        <div className="max-w-screen-2xl mx-auto px-6">
-          <div className="bg-[#101319] rounded-2xl p-12 text-center text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+      <section className="bg-[#101319] py-24 px-6">
+        <div className="max-w-screen-2xl mx-auto">
+          <div className="bg-gradient-to-br from-white/5 to-white/10 rounded-2xl p-12 md:p-16 text-center border border-white/10">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
               ¿Listo para tu próximo Audi?
             </h2>
-            <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg">
+            <p className="text-gray-300 mb-10 max-w-2xl mx-auto text-lg md:text-xl font-light leading-relaxed">
               Visitanos en nuestro concesionario o contactanos por teléfono, WhatsApp o email. 
               Estamos para asesorarte en tu próxima compra.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-black hover:bg-gray-200">
+              <a
+                href="tel:3874315000"
+                className="inline-block bg-white text-[#101319] px-10 py-4 text-base font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider rounded-full"
+              >
                 (387) 431-5000
-              </Button>
-              <Button size="lg" variant="outline" className="bg-white text-black hover:bg-gray-200">
+              </a>
+              <a
+                href="/contacto"
+                className="inline-block border-2 border-white text-white px-10 py-4 text-base font-medium hover:bg-white hover:text-[#101319] transition-all duration-300 uppercase tracking-wider rounded-full"
+              >
                 Escribinos por WhatsApp
-              </Button>
-              <Button size="lg" variant="outline" className="bg-white text-black hover:bg-gray-200">
+              </a>
+              <a
+                href="mailto:salta@ubmotors.com.ar"
+                className="inline-block border-2 border-white text-white px-10 py-4 text-base font-medium hover:bg-white hover:text-[#101319] transition-all duration-300 uppercase tracking-wider rounded-full"
+              >
                 Enviar email
-              </Button>
+              </a>
             </div>
           </div>
         </div>

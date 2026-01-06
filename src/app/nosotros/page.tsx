@@ -68,7 +68,7 @@ export default function NosotrosPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-r from-black via-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
         </div>
         
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-center">
@@ -80,10 +80,10 @@ export default function NosotrosPage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2" />
             </div>
             
-            <h1 className="text-5xl md:text-7xl  mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-light mb-6 leading-tight tracking-tight">
               UB Motors
             </h1>
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed font-light">
               Tu concesionario oficial Audi en el Norte Argentino. 
               Compromiso, calidad y excelencia desde hace más de 15 años.
             </p>
@@ -112,7 +112,7 @@ export default function NosotrosPage() {
                 <div className="h-px w-20 bg-[#BB0A30] mt-2" />
               </div>
               
-              <h2 className="text-4xl md:text-5xl  mb-6">
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
                 Compromiso con la Excelencia
               </h2>
               
@@ -227,7 +227,7 @@ export default function NosotrosPage() {
                 <Target className="w-8 h-8 text-[#BB0A30]" />
               </div>
               
-              <h2 className="text-3xl  mb-6">Nuestra Misión</h2>
+              <h2 className="text-3xl font-light mb-6 tracking-tight">Nuestra Misión</h2>
               
               <p className="text-gray-300 leading-relaxed text-lg">
                 Ser una empresa <span className="text-white ">altamente competitiva</span>, 
@@ -244,7 +244,7 @@ export default function NosotrosPage() {
                 <Eye className="w-8 h-8 text-[#BB0A30]" />
               </div>
               
-              <h2 className="text-3xl  mb-6">Nuestra Visión</h2>
+              <h2 className="text-3xl font-light mb-6 tracking-tight">Nuestra Visión</h2>
               
               <p className="text-gray-300 leading-relaxed text-lg">
                 Alcanzar el <span className="text-white ">liderazgo en cada segmento</span> en 
@@ -270,7 +270,7 @@ export default function NosotrosPage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2 mx-auto" />
             </div>
             
-            <h2 className="text-4xl md:text-5xl  mb-6">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
               Valores que nos Definen
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
@@ -314,7 +314,7 @@ export default function NosotrosPage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2 mx-auto" />
             </div>
             
-            <h2 className="text-4xl md:text-5xl  mb-6">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
               Excelencia Certificada
             </h2>
           </div>
@@ -350,7 +350,7 @@ export default function NosotrosPage() {
               <div className="h-px w-20 bg-[#BB0A30] mt-2 mx-auto" />
             </div>
             
-            <h2 className="text-4xl md:text-5xl  mb-6">
+            <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
               Nuestros Concesionarios
             </h2>
             <p className="text-gray-400 text-lg max-w-3xl mx-auto">
@@ -373,7 +373,7 @@ export default function NosotrosPage() {
               />
               <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8">
-                <h3 className="text-2xl  mb-2">Tucumán Centro</h3>
+                <h3 className="text-2xl font-light mb-2">Tucumán Centro</h3>
                 <p className="text-gray-300 text-sm mb-4">Santiago del Estero 902</p>
                 <span className="inline-flex items-center gap-2 text-[#BB0A30] ">
                   Ver concesionario

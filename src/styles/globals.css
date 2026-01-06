@@ -121,5 +121,23 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-light;
+    letter-spacing: -0.02em;
+  }
+  
+  /* Mejoras de tipografía para un look más premium */
+  .font-light {
+    font-weight: 300;
+  }
+  
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
   }
 }

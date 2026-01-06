@@ -42,31 +42,37 @@ export default function Q2Page() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-linear-to-t from-[#0a0d11] via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
         </div>
         
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-end pb-20">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4">Q2</h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl">
+          <div className="inline-block mb-6">
+            <span className="text-sm font-medium tracking-widest text-gray-400 uppercase">
+              Modelo
+            </span>
+            <div className="h-px w-20 bg-white mt-2" />
+          </div>
+          <h1 className="text-5xl md:text-7xl font-light mb-4 tracking-tight">Q2</h1>
+          <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl font-light">
             Diseño dinámico, diversión excepcional
           </p>
           
           <div className="flex flex-wrap gap-4">
             <Link
               href="/configurador/q2"
-              className="px-8 py-4 bg-white text-[#101319] rounded-full font-semibold hover:bg-gray-200"
+              className="px-10 py-4 bg-white text-[#101319] rounded-full font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
             >
               Configurar
             </Link>
             <Link
               href="/stock?modelo=q2"
-              className="px-8 py-4 bg-white/10 border border-white/30 rounded-full font-semibold hover:bg-white/20"
+              className="px-10 py-4 bg-white/10 border border-white/30 rounded-full font-medium hover:bg-white/20 transition-all duration-300 uppercase tracking-wider"
             >
               Ver Stock
             </Link>
             <Link
               href="/contacto"
-              className="px-8 py-4 bg-white/10 border border-white/30 rounded-full font-semibold hover:bg-white/20"
+              className="px-10 py-4 bg-white/10 border border-white/30 rounded-full font-medium hover:bg-white/20 transition-all duration-300 uppercase tracking-wider"
             >
               Solicitar asesoramiento
             </Link>
@@ -77,7 +83,7 @@ export default function Q2Page() {
       {/* Introducción */}
       <section className="py-20 px-6">
         <div className="max-w-screen-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
             El SUV urbano perfecto
           </h2>
           <p className="text-gray-300 text-lg max-w-3xl mx-auto">
@@ -94,7 +100,7 @@ export default function Q2Page() {
         <div className="max-w-screen-2xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Increíblemente divertido</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Increíblemente divertido</h2>
               <p className="text-gray-300 leading-relaxed mb-4">
                 Su diseño enamora. Su agilidad en movimiento sorprende. Y su versatilidad te dejan 
                 sin palabras.
@@ -118,7 +124,7 @@ export default function Q2Page() {
       {/* Galería de Imágenes */}
       <section className="py-20 px-6 max-w-screen-2xl mx-auto">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Estilo único</h2>
+          <h2 className="text-4xl md:text-5xl font-light mb-4 tracking-tight">Estilo único</h2>
           <p className="text-gray-400 text-lg">
             El diseño del Audi Q2 es un creador de tendencias que atrae todas las miradas
           </p>
@@ -181,7 +187,7 @@ export default function Q2Page() {
               />
             </div>
             <div className="order-1 md:order-2">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Práctico y espacioso</h2>
+              <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">Práctico y espacioso</h2>
               <div className="space-y-4 mb-6">
                 <div className="flex items-start gap-4">
                   <Package className="w-12 h-12 text-white shrink-0" />
@@ -211,7 +217,7 @@ export default function Q2Page() {
             
             {/* Configurador */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-8">
-              <h3 className="text-2xl font-bold mb-4">Configurador</h3>
+              <h3 className="text-2xl font-light mb-4">Configurador</h3>
               <p className="text-gray-300 mb-6">
                 Dale tu propio estilo eligiendo cada detalle.
               </p>
@@ -250,7 +256,7 @@ export default function Q2Page() {
               href="/modelos/q2/dimensiones"
               className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 hover:border-white/30"
             >
-              <h3 className="text-2xl font-bold mb-4">Dimensiones</h3>
+              <h3 className="text-2xl font-light mb-4">Dimensiones</h3>
               <p className="text-gray-300 mb-6">Conocé las medidas exactas del Q2</p>
               <span className="inline-flex items-center gap-2 text-white">
                 Saber más
@@ -276,7 +282,7 @@ export default function Q2Page() {
       {/* Modelos relacionados */}
       <section className="py-20 px-6">
         <div className="max-w-screen-2xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
+          <h2 className="text-4xl md:text-5xl font-light mb-12 text-center tracking-tight">
             Quizás también te interese…
           </h2>
           
@@ -297,7 +303,7 @@ export default function Q2Page() {
                     />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2">Audi {model.name}</h3>
+                    <h3 className="text-xl font-light mb-2">Audi {model.name}</h3>
                     <span className="inline-flex items-center gap-2 text-gray-400 group-hover:text-white">
                       Ver modelo
                       <ChevronRight size={16} />
@@ -313,7 +319,7 @@ export default function Q2Page() {
       {/* CTA Final */}
       <section className="py-20 px-6 bg-white/5">
         <div className="max-w-screen-2xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-4xl md:text-5xl font-light mb-6 tracking-tight">
             Tu Audi Q2 te está esperando
           </h2>
           <p className="text-gray-300 text-lg mb-12 max-w-3xl mx-auto">
@@ -323,13 +329,13 @@ export default function Q2Page() {
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
               href="/configurador/q2"
-              className="px-8 py-4 bg-white text-[#101319] rounded-full font-semibold hover:bg-gray-200"
+              className="px-10 py-4 bg-white text-[#101319] rounded-full font-medium hover:bg-gray-100 transition-all duration-300 uppercase tracking-wider"
             >
               Configurar el Audi Q2
             </Link>
             <Link
               href="/contacto"
-              className="px-8 py-4 bg-white/10 border border-white/30 rounded-full font-semibold hover:bg-white/20"
+              className="px-10 py-4 bg-white/10 border border-white/30 rounded-full font-medium hover:bg-white/20 transition-all duration-300 uppercase tracking-wider"
             >
               Solicitar asesoramiento
             </Link>

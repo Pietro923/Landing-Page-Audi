@@ -68,7 +68,7 @@ export default function NosotrosPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/70 to-black/50" />
+          <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/70 to-black/50" />
         </div>
         
         <div className="relative h-full max-w-screen-2xl mx-auto px-6 flex flex-col justify-center">
@@ -189,7 +189,7 @@ export default function NosotrosPage() {
             <div className="relative">
               <div className="aspect-4/5 relative rounded-2xl overflow-hidden">
                 <Image
-                  src="/Concesionarios/centro/salon.jpg"
+                  src="/Concesionarios/centro/salon.JPG"
                   alt="Interior UB Motors"
                   fill
                   className="object-cover"
@@ -366,7 +366,7 @@ export default function NosotrosPage() {
               className="group relative overflow-hidden rounded-2xl aspect-3/4 bg-black"
             >
               <Image
-                src="/concesionarios/centro/salon2.jpg"
+                src="/Concesionarios/centro/salon2.JPG"
                 alt="Tucumán Centro"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -390,7 +390,7 @@ export default function NosotrosPage() {
               className="group relative overflow-hidden rounded-2xl aspect-3/4 bg-black"
             >
               <Image
-                src="/concesionarios/yb/entrada.jpg"
+                src="/Concesionarios/yb/entrada.jpg"
                 alt="Yerba Buena"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -414,7 +414,7 @@ export default function NosotrosPage() {
               className="group relative overflow-hidden rounded-2xl aspect-3/4 bg-black"
             >
               <Image
-                src="/concesionarios/salta/exterior.jpg"
+                src="/Concesionarios/salta/exterior.jpg"
                 alt="Salta"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"

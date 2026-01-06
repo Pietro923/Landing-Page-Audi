@@ -100,7 +100,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3 absolute left-6 md:left-20">
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="/Logos/Audi.svg"
+              src="/Logos/audi.svg"
               alt="Audi"
               width={96}
               height={24}

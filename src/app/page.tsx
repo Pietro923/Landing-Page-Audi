@@ -13,7 +13,7 @@ const tiles = [
   {
     title: 'Fórmula 1 ®',
     href: '/es/innovacion-audi/audi-sport/formula-1/',
-    image: '/Home/F1-Home.avif',
+    image: '/Home/F1-home.avif',
   },
   {
     title: 'E-movilidad',
@@ -196,7 +196,7 @@ export default function HomePage() {
           <source src="/Videos/A3.mp4" type="video/mp4" />
         </video>
         
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/30 to-transparent" />
         
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-white px-6">
           <h2 className="text-6xl md:text-7xl xl:text-8xl font-light mb-6 md:mb-10 tracking-tight">Audi A3</h2>

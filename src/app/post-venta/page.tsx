@@ -15,7 +15,6 @@ import {
   Users,
   Zap,
   ChevronRight,
-  Car,
   MapPin
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';

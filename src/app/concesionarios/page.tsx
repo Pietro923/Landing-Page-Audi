@@ -12,7 +12,7 @@ const concesionarios = [
     telefono: '(381) 430-8200',
     email: 'ventas@ubmotors.com.ar',
     horario: 'Lun a Vie: 8:00 - 17:30',
-    imagen: '/Concesionarios/centro/salon2.jpg',
+    imagen: '/Concesionarios/centro/salon2.JPG',
     url: '/concesionarios/tucuman/centro',
   },
   {

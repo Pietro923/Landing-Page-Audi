@@ -71,11 +71,11 @@ const beneficios = [
     title: 'Service Express',
     description: 'Atención prioritaria para mantenimientos programados y cambios de aceite'
   },
-  {
-    icon: Car,
-    title: 'Auto de Cortesía',
-    description: 'Vehículo disponible durante tu service para que no pares'
-  },
+  // {
+  //   icon: Car,
+  //   title: 'Auto de Cortesía',
+  //   description: 'Vehículo disponible durante tu service para que no pares'
+  // },
   {
     icon: Award,
     title: 'Garantía Oficial',

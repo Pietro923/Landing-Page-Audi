@@ -244,10 +244,10 @@ export default function Salta() {
                   <span className="text-white mt-1">•</span>
                   <span>Diagnóstico computarizado avanzado</span>
                 </li>
-                <li className="flex items-start gap-2 text-gray-300 font-light">
+                {/* <li className="flex items-start gap-2 text-gray-300 font-light">
                   <span className="text-white mt-1">•</span>
                   <span>Vehículo de cortesía disponible</span>
-                </li>
+                </li> */}
                 <li className="flex items-start gap-2 text-gray-300 font-light">
                   <span className="text-white mt-1">•</span>
                   <span>Garantía extendida opcional</span>

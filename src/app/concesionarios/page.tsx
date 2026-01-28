@@ -11,8 +11,8 @@ const concesionarios = [
     provincia: 'Tucumán',
     telefono: '(381) 430-8200',
     email: 'ventas@ubmotors.com.ar',
-    horario: 'Lun a Vie: 9:00 - 19:00',
-    imagen: '/concesionarios/centro/salon2.jpg',
+    horario: 'Lun a Vie: 8:00 - 17:30',
+    imagen: '/Concesionarios/centro/salon2.jpg',
     url: '/concesionarios/tucuman/centro',
   },
   {
@@ -23,8 +23,8 @@ const concesionarios = [
     provincia: 'Tucumán',
     telefono: '(381) 425-9000',
     email: 'yerbabuena@ubmotors.com.ar',
-    horario: 'Lun a Vie: 9:00 - 20:00',
-    imagen: '/concesionarios/yb/entrada.jpg',
+    horario: 'Lun a Vie: 8:00 - 17:30',
+    imagen: '/Concesionarios/yb/entrada.jpg',
     url: '/concesionarios/tucuman/yerba-buena',
   },
   {
@@ -35,8 +35,8 @@ const concesionarios = [
     provincia: 'Salta',
     telefono: '(387) 431-5000',
     email: 'salta@ubmotors.com.ar',
-    horario: 'Lun a Vie: 9:00 - 19:30',
-    imagen: '/concesionarios/salta/exterior.jpg',
+    horario: 'Lun a Vie: 8:00 - 17:30',
+    imagen: '/Concesionarios/salta/exterior.jpg',
     url: '/concesionarios/salta',
   },
 ];
@@ -128,9 +128,6 @@ export default function Concesionarios() {
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                  <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-sm text-white px-4 py-2 rounded-full text-xs font-medium border border-white/20">
-                    {concesionario.destacado}
-                  </div>
                 </div>
 
                 {/* Contenido */}

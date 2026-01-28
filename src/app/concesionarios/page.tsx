@@ -14,7 +14,6 @@ const concesionarios = [
     horario: 'Lun a Vie: 9:00 - 19:00',
     imagen: '/concesionarios/centro/salon2.jpg',
     url: '/concesionarios/tucuman/centro',
-    destacado: 'Showroom principal en el centro',
   },
   {
     id: 'tucuman-yerbabuena',
@@ -27,7 +26,6 @@ const concesionarios = [
     horario: 'Lun a Vie: 9:00 - 20:00',
     imagen: '/concesionarios/yb/entrada.jpg',
     url: '/concesionarios/tucuman/yerba-buena',
-    destacado: 'Centro e-tron especializado',
   },
   {
     id: 'salta',
@@ -40,7 +38,6 @@ const concesionarios = [
     horario: 'Lun a Vie: 9:00 - 19:30',
     imagen: '/concesionarios/salta/exterior.jpg',
     url: '/concesionarios/salta',
-    destacado: 'Referente del Norte Argentino',
   },
 ];
 
